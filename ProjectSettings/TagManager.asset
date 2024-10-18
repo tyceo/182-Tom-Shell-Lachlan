@@ -38,18 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: rocks
-    uniqueID: 3383621807
-    locked: 0
-  - name: player
-    uniqueID: 1182108561
+  - name: background
+    uniqueID: 93009041
     locked: 0
   - name: detail
     uniqueID: 1515093707
     locked: 0
-  - name: background
-    uniqueID: 93009041
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 1182108561
+    locked: 0
+  - name: rocks
+    uniqueID: 3383621807
     locked: 0
