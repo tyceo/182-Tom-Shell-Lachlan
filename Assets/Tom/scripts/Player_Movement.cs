@@ -5,37 +5,65 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Player_Movement : MonoBehaviour
 {
+    public float speed = 10f; // Speed of the ship
+    public float tiltAngle = 10f; // Maximum tilt angle
+    public float tiltSpeed = 15f; // Tilt speed
+    public float acceleration = 5f; // Forward acceleration speed
+    private Vector2 velocity; // Current velocity of the ship
 
-    public float moveSpeed = 5;
-    public float velocity_x = 0;
-    public float velocity_y = 0;
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        // Handle movement input
+        HandleMovement();
+        // Check for wall collisions
+        CheckBoundaries();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleMovement()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0, 0, (float)-0.5);
-
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0, 0, (float)0.5);
-        }
-
-
+        // Accelerate forward when 'W' is pressed
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.right * Time.deltaTime * moveSpeed;
+            // Apply acceleration in the direction the ship is facing
+            velocity += (Vector2)(transform.up * acceleration * Time.deltaTime);
         }
+
+        // Move the ship based on its current velocity
+        transform.position += (Vector3)velocity * Time.deltaTime;
+
+        // Handle rotation with 'A' and 'D'
+        float tiltInput = Input.GetAxis("Horizontal"); // -1 for 'A', 1 for 'D'
+        float tilt = tiltInput * tiltAngle;
+
+        // Apply rotation
+        transform.Rotate(0, 0, -tilt * tiltSpeed * Time.deltaTime); // Rotate around the Z-axis
+    }
+
+    private void CheckBoundaries()
+    {
+        // Get the screen boundaries
+        Vector3 position = transform.position;
+
+        // Teleport to the opposite side if out of bounds
+        if (position.x < -Camera.main.orthographicSize * Camera.main.aspect)
+        {
+            position.x = Camera.main.orthographicSize * Camera.main.aspect;
+        }
+        else if (position.x > Camera.main.orthographicSize * Camera.main.aspect)
+        {
+            position.x = -Camera.main.orthographicSize * Camera.main.aspect;
+        }
+
+        if (position.y < -Camera.main.orthographicSize)
+        {
+            position.y = Camera.main.orthographicSize;
+        }
+        else if (position.y > Camera.main.orthographicSize)
+        {
+            position.y = -Camera.main.orthographicSize;
+        }
+
+        transform.position = position;
     }
 }
 
