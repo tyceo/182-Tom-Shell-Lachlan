@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Rock : MonoBehaviour
 {
+    
     public float speed = 3f; // Speed of the meteor
     private Vector2 direction; // Movement direction
-    private float spawnOffset = 1.5f; // Offset from the screen edge
+    
 
     private void Start()
     {
         SetSpawnPosition();
         SetRandomDirection();
+
     }
 
     private void Update()
@@ -20,19 +23,27 @@ public class Rock : MonoBehaviour
 
         if (IsOffScreen()) ResetMeteor();
     }
+    public bool IsOffScreen()
+    {
+        if (position.x < -Camera.main.orthographicSize * Camera.main.aspect)
+        {
+            //wait one sec
 
+        }
+    }
+    /*
     private bool IsOffScreen()
     {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
         return pos.x < 0 || pos.x > 1 || pos.y < 0 || pos.y > 1;
     }
-
+    
     private void ResetMeteor()
     {
         SetSpawnPosition();
         SetRandomDirection();
     }
-
+    
     private void SetSpawnPosition()
     {
         float x, y;
@@ -53,9 +64,10 @@ public class Rock : MonoBehaviour
 
         transform.position = new Vector3(x, y, 0);
     }
-
+    
     private void SetRandomDirection()
     {
         direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
+    */
 }
