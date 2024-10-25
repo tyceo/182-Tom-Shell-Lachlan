@@ -224,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275185941}
   - component: {fileID: 275185940}
+  - component: {fileID: 275185942}
   m_Layer: 0
   m_Name: Tentacle (2)
   m_TagString: Untagged
@@ -291,13 +292,48 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275185939}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.46333396, w: -0.88618374}
-  m_LocalPosition: {x: -1.59, y: 1.03, z: 0}
-  m_LocalScale: {x: 1, y: 2.5281, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.48697597, w: -0.8734154}
+  m_LocalPosition: {x: -0.621, y: 0.319, z: 0}
+  m_LocalScale: {x: 0.3833915, y: 0.96925205, z: 0.3833915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -304.79498}
+  m_Father: {fileID: 1753056979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -301.716}
+--- !u!70 &275185942
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275185939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000031355196, y: -0.090880245}
+  m_Size: {x: 1.0000166, y: 0.39556044}
+  m_Direction: 0
 --- !u!1 &693566053
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +344,8 @@ GameObject:
   m_Component:
   - component: {fileID: 693566055}
   - component: {fileID: 693566054}
+  - component: {fileID: 693566056}
+  - component: {fileID: 693566057}
   m_Layer: 0
   m_Name: Tentacle (1)
   m_TagString: Untagged
@@ -375,13 +413,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693566053}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.030531289, w: 0.9995338}
-  m_LocalPosition: {x: 0.33, y: 1.79, z: 0}
-  m_LocalScale: {x: 1, y: 2.5281, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.000093578594, w: 1}
+  m_LocalPosition: {x: -0.001, y: 0.699, z: 0}
+  m_LocalScale: {x: 0.38339153, y: 0.9692521, z: 0.3833915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.499}
+  m_Father: {fileID: 1753056979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.011}
+--- !u!70 &693566056
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693566053}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000059604538, y: -0.09089107}
+  m_Size: {x: 0.9999987, y: 0.3955535}
+  m_Direction: 0
+--- !u!114 &693566057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693566053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdda3aeec69ba64698e7be80c1f1de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &931934921
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 931934923}
   - component: {fileID: 931934922}
+  - component: {fileID: 931934924}
   m_Layer: 0
   m_Name: Tentacle (3)
   m_TagString: Untagged
@@ -459,13 +545,48 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931934921}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.86480194, w: -0.50211316}
-  m_LocalPosition: {x: -1.4, y: -1.04, z: 0}
-  m_LocalScale: {x: 1, y: 2.5281, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9166732, w: -0.39963782}
+  m_LocalPosition: {x: -0.497, y: -0.497, z: 0}
+  m_LocalScale: {x: 0.3833915, y: 0.969252, z: 0.3833915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -240.28}
+  m_Father: {fileID: 1753056979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -227.111}
+--- !u!70 &931934924
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931934921}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000003067473, y: -0.0908931}
+  m_Size: {x: 1.0000165, y: 0.3955605}
+  m_Direction: 0
 --- !u!1 &1753056977
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,10 +665,15 @@ Transform:
   m_GameObject: {fileID: 1753056977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0.12, y: -0.17, z: 0}
   m_LocalScale: {x: 2.6083, y: 2.6083, z: 2.6083}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2055780660}
+  - {fileID: 693566055}
+  - {fileID: 275185941}
+  - {fileID: 931934923}
+  - {fileID: 1884580648}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884580646
@@ -560,6 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1884580648}
   - component: {fileID: 1884580647}
+  - component: {fileID: 1884580649}
   m_Layer: 0
   m_Name: Tentacle (4)
   m_TagString: Untagged
@@ -627,13 +754,48 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884580646}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.48437127, w: 0.87486255}
-  m_LocalPosition: {x: 1.56, y: 0.75, z: 0}
-  m_LocalScale: {x: 1, y: 2.5281, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5182975, w: 0.8552004}
+  m_LocalPosition: {x: 0.582439, y: 0.2861435, z: 0}
+  m_LocalScale: {x: 0.3833915, y: 0.96925205, z: 0.3833915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -57.943}
+  m_Father: {fileID: 1753056979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -62.436}
+--- !u!70 &1884580649
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884580646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000017214452, y: -0.09089017}
+  m_Size: {x: 0.9999954, y: 0.3955522}
+  m_Direction: 0
 --- !u!1 &2055780658
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055780660}
   - component: {fileID: 2055780659}
+  - component: {fileID: 2055780661}
   m_Layer: 0
   m_Name: Tentacle
   m_TagString: Untagged
@@ -712,20 +875,50 @@ Transform:
   m_GameObject: {fileID: 2055780658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9407506, w: 0.3390994}
-  m_LocalPosition: {x: 1.19, y: -1.31, z: 0}
-  m_LocalScale: {x: 1, y: 2.5281, z: 1}
+  m_LocalPosition: {x: 0.44856808, y: -0.5175785, z: 0}
+  m_LocalScale: {x: 0.38339147, y: 0.96925205, z: 0.3833915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1753056979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -140.356}
+--- !u!70 &2055780661
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055780658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000005929582, y: -0.09089075}
+  m_Size: {x: 1.0000207, y: 0.39556214}
+  m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 129514406}
   - {fileID: 1753056979}
-  - {fileID: 2055780660}
-  - {fileID: 693566055}
-  - {fileID: 275185941}
-  - {fileID: 931934923}
-  - {fileID: 1884580648}
