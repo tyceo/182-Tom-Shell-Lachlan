@@ -5,12 +5,12 @@ using UnityEngine;
 public class TentacleMouseInteraction : MonoBehaviour
 {
     private bool mouseHovering;
-
+    private TentacleChopping tentacleChop;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        tentacleChop = this.GetComponent<TentacleChopping>();
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class TentacleMouseInteraction : MonoBehaviour
     private void MouseChop()
     {
         Debug.Log("Chopped Tentacle");
+        tentacleChop.TentacleChopped();
     }
 
 
