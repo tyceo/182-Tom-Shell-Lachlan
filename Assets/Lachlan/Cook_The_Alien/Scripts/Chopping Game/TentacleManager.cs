@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TentacleManager : MonoBehaviour
 {
     private int Tentacles = 5;
+    public Scene fryingScene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,7 @@ public class TentacleManager : MonoBehaviour
         if (Tentacles == 0) 
         {
             Debug.Log("NO MORE TENTACLES");
+            StartCoroutine(ChangeScene());
         }
     }
 
@@ -25,5 +29,16 @@ public class TentacleManager : MonoBehaviour
     {
         Tentacles--;
     }
+
+    
+
+
+    public IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Lachlan_Cook_The_Alien_Scene_2", LoadSceneMode.Single);
+    }
+
 
 }
