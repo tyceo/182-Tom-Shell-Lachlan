@@ -5,69 +5,69 @@ using UnityEngine.UIElements;
 
 public class Rock : MonoBehaviour
 {
-    
-    public float speed = 3f; // Speed of the meteor
-    private Vector2 direction; // Movement direction
-    
+    public float speed = 5f;                // Base speed of the asteroid
+    public float speedVariance = 3f;        // Amount of random variance to add to speed
+    public float spawnRadius = 10f;         // Radius at which asteroids spawn around the center
+    public float directionVariance = 45f;   // Variance of up to 45 degrees to each side (90 total)
+    public float rotationSpeedMin = -100f;  // Minimum rotation speed in degrees per second
+    public float rotationSpeedMax = 100f;   // Maximum rotation speed in degrees per second
 
+    private Vector3 targetPosition = Vector3.zero;  // Target position (center of the screen)
+    private Vector3 spawnPosition;
+    private float actualSpeed;                      // The speed with random variance
+    private float rotationSpeed;                    // The random rotation speed of the asteroid
+    /*
     private void Start()
     {
-        SetSpawnPosition();
-        SetRandomDirection();
 
-    }
-
-    private void Update()
-    {
-        transform.position += (Vector3)direction * speed * Time.deltaTime;
-
-        if (IsOffScreen()) ResetMeteor();
-    }
-    public bool IsOffScreen()
-    {
-        if (position.x < -Camera.main.orthographicSize * Camera.main.aspect)
-        {
-            //wait one sec
-
-        }
-    }
-    /*
-    private bool IsOffScreen()
-    {
-        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        return pos.x < 0 || pos.x > 1 || pos.y < 0 || pos.y > 1;
-    }
-    
-    private void ResetMeteor()
-    {
-        SetSpawnPosition();
-        SetRandomDirection();
-    }
-    
-    private void SetSpawnPosition()
-    {
-        float x, y;
-        float cameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
-        float cameraHeight = Camera.main.orthographicSize;
-
-        // Spawn from a random edge slightly off-screen
-        if (Random.value > 0.5f) // Horizontal edge
-        {
-            x = Random.value > 0.5f ? cameraWidth + spawnOffset : -cameraWidth - spawnOffset; // Right or Left
-            y = Random.Range(-cameraHeight, cameraHeight);
-        }
-        else // Vertical edge
-        {
-            y = Random.value > 0.5f ? cameraHeight + spawnOffset : -cameraHeight - spawnOffset; // Top or Bottom
-            x = Random.Range(-cameraWidth, cameraWidth);
-        }
-
-        transform.position = new Vector3(x, y, 0);
-    }
-    
-    private void SetRandomDirection()
-    {
-        direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+       
     }
     */
+    IEnumerator Start()
+    {
+        yield return new WaitForSeconds(Random.Range(1f, 8f));
+        StartCoroutine(LaunchAsteroid());
+    }
+
+    private IEnumerator LaunchAsteroid()
+    {
+        while (true)
+        {
+            // Choose a random spawn position around the center
+            float angle = Random.Range(0, 360);
+            spawnPosition = targetPosition + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
+
+            // Move asteroid to spawn position
+            transform.position = spawnPosition;
+
+            // Calculate direction with random variance
+            Vector3 direction = (targetPosition - spawnPosition).normalized;
+            float varianceAngle = Random.Range(-directionVariance, directionVariance);
+            direction = Quaternion.Euler(0, 0, varianceAngle) * direction;
+
+            // Apply random speed variance
+            actualSpeed = speed + Random.Range(-speedVariance, speedVariance);
+
+            // Assign a random rotation speed
+            rotationSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
+
+            // Set a 3-second timer for the asteroid's life
+            float timer = 8f;
+
+            // Move asteroid toward the center and rotate it while the timer is active
+            while (timer > 0)
+            {
+                // Move the asteroid forward with random speed
+                transform.position += direction * actualSpeed * Time.deltaTime;
+
+                // Rotate the asteroid
+                transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+
+                timer -= Time.deltaTime;
+                yield return null;
+            }
+
+            
+        }
+    }
 }
