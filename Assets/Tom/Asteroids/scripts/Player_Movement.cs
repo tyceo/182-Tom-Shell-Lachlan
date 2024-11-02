@@ -10,13 +10,34 @@ public class Player_Movement : MonoBehaviour
     public float tiltSpeed = 15f; // Tilt speed
     public float acceleration = 5f; // Forward acceleration speed
     private Vector2 velocity; // Current velocity of the ship
+    private Rigidbody2D rb;
+
+    void start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
+        
         // Handle movement input
         HandleMovement();
         // Check for wall collisions
         CheckBoundaries();
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+            
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rock") && Time.time < 15f )
+        {
+            Application.Quit();
+            print("test");
+        }
+        
     }
 
     private void HandleMovement()

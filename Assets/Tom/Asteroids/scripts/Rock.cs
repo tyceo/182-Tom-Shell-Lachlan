@@ -12,10 +12,10 @@ public class Rock : MonoBehaviour
     public float rotationSpeedMin = -100f;  // Minimum rotation speed in degrees per second
     public float rotationSpeedMax = 100f;   // Maximum rotation speed in degrees per second
 
-    private Vector3 targetPosition = Vector3.zero;  // Target position (center of the screen)
+    private Vector3 targetPosition = Vector3.zero;  
     private Vector3 spawnPosition;
-    private float actualSpeed;                      // The speed with random variance
-    private float rotationSpeed;                    // The random rotation speed of the asteroid
+    private float actualSpeed;                      
+    private float rotationSpeed;                    
     /*
     private void Start()
     {
@@ -25,7 +25,7 @@ public class Rock : MonoBehaviour
     */
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 8f));
+        yield return new WaitForSeconds(Random.Range(3f, 10f));
         StartCoroutine(LaunchAsteroid());
     }
 
@@ -33,7 +33,7 @@ public class Rock : MonoBehaviour
     {
         while (true)
         {
-            // Choose a random spawn position around the center
+            
             float angle = Random.Range(0, 360);
             spawnPosition = targetPosition + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
 

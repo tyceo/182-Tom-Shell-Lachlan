@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Object
   - 
   - 
   - 
@@ -49,12 +49,12 @@ TagManager:
   - name: detail
     uniqueID: 1515093707
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: player
     uniqueID: 1182108561
     locked: 0
   - name: rocks
     uniqueID: 3383621807
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
