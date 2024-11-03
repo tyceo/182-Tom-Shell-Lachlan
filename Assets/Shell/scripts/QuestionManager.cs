@@ -13,9 +13,9 @@ public class QuestionManager : MonoBehaviour
     public QuestionController tmpTextChanger;
     public int currentQuestion = 0;
 
-    public Timer progressBar;
+    public Slider progressBar;
 
-    public youwin winScreen; // Reference to the win screen image
+    public RawImage winScreen; // Reference to the win screen image
     public float duration = 15f; // Duration for progress to reach max, in seconds
     public string nextSceneName = "Tom_Connect_The_Cable"; // Name of the scene to load
 
