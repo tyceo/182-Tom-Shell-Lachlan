@@ -1397,7 +1397,8 @@ Transform:
   m_LocalPosition: {x: 10.91, y: 4.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1809598222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227458203
@@ -1697,7 +1698,7 @@ GameObject:
   - component: {fileID: 1426946492}
   - component: {fileID: 1426946491}
   m_Layer: 5
-  m_Name: Image
+  m_Name: youwin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1945,7 +1946,7 @@ RectTransform:
   - {fileID: 1346693404}
   - {fileID: 63214346}
   - {fileID: 1426946490}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1207146936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2171,5 +2172,4 @@ SceneRoots:
   - {fileID: 130526538}
   - {fileID: 879178063}
   - {fileID: 571837906}
-  - {fileID: 1809598222}
   - {fileID: 733616521}

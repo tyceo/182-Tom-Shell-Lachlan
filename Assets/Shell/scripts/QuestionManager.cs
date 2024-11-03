@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -13,9 +15,9 @@ public class QuestionManager : MonoBehaviour
 
     public Timer progressBar;
 
-    public Image winScreen; // Reference to the win screen image
+    public youwin winScreen; // Reference to the win screen image
     public float duration = 15f; // Duration for progress to reach max, in seconds
-    public string nextSceneName = "NextScene"; // Name of the scene to load
+    public string nextSceneName = "Tom_Connect_The_Cable"; // Name of the scene to load
 
     private float elapsedTime = 0f; // Tracks the elapsed time
     private bool gameWon = false;
