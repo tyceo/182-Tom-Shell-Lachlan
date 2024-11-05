@@ -8,6 +8,7 @@ public class TentacleChopping : MonoBehaviour
     [SerializeField] private GameObject choppedTentaclePrefab;
     private bool tentacleChopped = false;
     [SerializeField] private TentacleManager tentacleManager;
+    [SerializeField] private GameObject correspondingChoppedTentacle;
 
 
     private void Start()
@@ -34,7 +35,7 @@ public class TentacleChopping : MonoBehaviour
 
     private void CreateChoppedTentacle()
     {
-        Instantiate(choppedTentaclePrefab); //Expand once there are sprites
+        correspondingChoppedTentacle.gameObject.SetActive(true);
     }
 
 
