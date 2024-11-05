@@ -18,7 +18,7 @@ public class TentacleFrying : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("trigger");
+        
         if (collision.gameObject.tag == "Fryer")
         {
             

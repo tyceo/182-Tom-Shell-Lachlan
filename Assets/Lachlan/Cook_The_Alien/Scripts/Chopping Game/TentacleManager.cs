@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TentacleManager : MonoBehaviour
 {
-    private int Tentacles = 5;
+    private int Tentacles = 6;
     public Scene fryingScene;
 
 

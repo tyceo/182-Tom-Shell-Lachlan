@@ -275,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e72b7dcd776da344b96c824fc582337, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,13 +294,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275185939}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.48697597, w: -0.8734154}
-  m_LocalPosition: {x: -0.621, y: 0.319, z: 0}
-  m_LocalScale: {x: 0.3833915, y: 0.96925205, z: 0.3833915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.069841, y: 1.2707642, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753056979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -301.716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &275185942
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -333,8 +333,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000031355196, y: -0.090880245}
-  m_Size: {x: 1.0000166, y: 0.39556044}
+  m_Offset: {x: 2.3464599, y: -0.836989}
+  m_Size: {x: 2.6652484, y: 2.6652484}
   m_Direction: 0
 --- !u!114 &275185943
 MonoBehaviour:
@@ -361,6 +361,155 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
+--- !u!1 &351364066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351364067}
+  - component: {fileID: 351364071}
+  - component: {fileID: 351364070}
+  - component: {fileID: 351364069}
+  - component: {fileID: 351364068}
+  m_Layer: 0
+  m_Name: Tentacle (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351364067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364066}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.851727, y: 0.16880304, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1753056979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351364068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a58b78abf794046abfff2e9d12c320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
+--- !u!114 &351364069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdda3aeec69ba64698e7be80c1f1de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &351364070
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364066}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.1289303, y: 0.034339927}
+  m_Size: {x: 1.8945059, y: 3.0036957}
+  m_Direction: 0
+--- !u!212 &351364071
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364066}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e4cc1e8f1da1cf346926097cda95b049, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &693566053
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,12 +571,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30d511ab09421c0478dda1fd8969b82a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.59, y: 8.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -441,13 +590,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693566053}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.000093578594, w: 1}
-  m_LocalPosition: {x: -0.001, y: 0.699, z: 0}
-  m_LocalScale: {x: 0.38339153, y: 0.9692521, z: 0.3833915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.549115, y: 8.728443, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753056979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &693566056
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -480,8 +629,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604538, y: -0.09089107}
-  m_Size: {x: 0.9999987, y: 0.3955535}
+  m_Offset: {x: 0.9344446, y: -3.4479327}
+  m_Size: {x: 2.5368314, y: 2.5368314}
   m_Direction: 0
 --- !u!114 &693566057
 MonoBehaviour:
@@ -508,6 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
 --- !u!1 &931934921
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +719,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 550b18277a271e04bb493d7292c710f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -588,13 +738,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931934921}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.9166732, w: -0.39963782}
-  m_LocalPosition: {x: -0.497, y: -0.497, z: 0}
-  m_LocalScale: {x: 0.3833915, y: 0.969252, z: 0.3833915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.229161, y: -5.375143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753056979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -227.111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &931934924
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -627,8 +777,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000003067473, y: -0.0908931}
-  m_Size: {x: 1.0000165, y: 0.3955605}
+  m_Offset: {x: 2.9339437, y: 1.318172}
+  m_Size: {x: 2.6214077, y: 3.2004728}
   m_Direction: 0
 --- !u!114 &931934925
 MonoBehaviour:
@@ -655,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
 --- !u!1 &1678834999
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712c8b1b763ff4e418aa9b9d3f336724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fryingScene:
+    m_Handle: 0
 --- !u!4 &1678835001
 Transform:
   m_ObjectHideFlags: 0
@@ -757,7 +910,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 879f4bd2f96cb2845bc7f45480b9916a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -778,7 +931,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.12, y: -0.17, z: 0}
-  m_LocalScale: {x: 2.6083, y: 2.6083, z: 2.6083}
+  m_LocalScale: {x: 0.26362088, y: 0.26362088, z: 0.26362088}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2055780660}
@@ -786,6 +939,7 @@ Transform:
   - {fileID: 275185941}
   - {fileID: 931934923}
   - {fileID: 1884580648}
+  - {fileID: 351364067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884580646
@@ -849,7 +1003,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cd0edae8a788714a86e87ba7a5386ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -868,13 +1022,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884580646}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.5182975, w: 0.8552004}
-  m_LocalPosition: {x: 0.582439, y: 0.2861435, z: 0}
-  m_LocalScale: {x: 0.3833915, y: 0.96925205, z: 0.3833915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.74074, y: 5.959315, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753056979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -62.436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1884580649
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -907,8 +1061,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000017214452, y: -0.09089017}
-  m_Size: {x: 0.9999954, y: 0.3955522}
+  m_Offset: {x: -1.3990176, y: -2.1646094}
+  m_Size: {x: 3.0439484, y: 3.0836349}
   m_Direction: 0
 --- !u!114 &1884580650
 MonoBehaviour:
@@ -935,6 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
 --- !u!1 &2055780658
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ad21f80a3d4de14b81c06b8d35a106d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1015,13 +1170,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055780658}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.9407506, w: 0.3390994}
-  m_LocalPosition: {x: 0.44856808, y: -0.5175785, z: 0}
-  m_LocalScale: {x: 0.38339147, y: 0.96925205, z: 0.3833915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.896788, y: -4.3661184, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753056979}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -140.356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2055780661
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1054,8 +1209,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000005929582, y: -0.09089075}
-  m_Size: {x: 1.0000207, y: 0.39556214}
+  m_Offset: {x: -3.2208202, y: 1.4800799}
+  m_Size: {x: 2.340931, y: 2.5381246}
   m_Direction: 0
 --- !u!114 &2055780662
 MonoBehaviour:
@@ -1082,10 +1237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choppedTentaclePrefab: {fileID: 1677928316421724383, guid: 78a9254726337ce47ab13341c3aea8e4, type: 3}
+  tentacleManager: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 129514406}
-  - {fileID: 1753056979}
   - {fileID: 1678835001}
+  - {fileID: 1753056979}
