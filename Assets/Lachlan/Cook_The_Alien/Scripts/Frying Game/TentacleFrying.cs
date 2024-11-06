@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TentacleFrying : MonoBehaviour
 {
+
+    private bool frying = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +25,36 @@ public class TentacleFrying : MonoBehaviour
         
         if (collision.gameObject.tag == "Fryer")
         {
+            frying = true;
+            StartCoroutine(fryingTentacle());
             
-            Debug.Log("Triggered on fryer");
         }
     }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fryer")
+        {
+            frying = false;
+            StopCoroutine(fryingTentacle());
+        }
+    }
+
+
+    private IEnumerator fryingTentacle()
+    {
+        Debug.Log("start frying");
+        yield return new WaitForSecondsRealtime(5);
+        if (frying == true)
+        {
+            Destroy(gameObject);
+        }
+        if (frying == false)
+        {
+            Debug.Log("stopped frying");
+        }
+    }
+
+
 
 }
