@@ -32,7 +32,7 @@ public class Player_Movement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock") && Time.time < 15f )
+        if (collision.gameObject.CompareTag("Rock") && Time.time < 25f )
         {
             Application.Quit();
             print("test");
