@@ -5,7 +5,7 @@ using UnityEngine;
 public class TentacleMouseMovement_FryingGame : MonoBehaviour
 {
     private Vector2 mousePosition;
-    private bool mouseHovering;
+    [SerializeField] private bool mouseHovering;
 
     // Start is called before the first frame updat
     void Start()
