@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        slider.value = 0; // Start at 0
+        slider.value = 0; // Start at full
     }
 
     public void Update()
@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
         elapsedTime += Time.deltaTime;
 
         // Calculate the progress percentage based on elapsed time and duration
-        float progress = Mathf.Clamp01(elapsedTime / duration);
+        float progress = slider.maxValue - Mathf.Clamp01(elapsedTime / duration);
 
         // Set the slider's value to the calculated progress
         slider.value = progress * slider.maxValue;

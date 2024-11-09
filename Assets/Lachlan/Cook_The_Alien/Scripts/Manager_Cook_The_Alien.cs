@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public Slider progressBar; // Reference to the slider
-    public Image winScreen; // Reference to the win screen image
+    
     public float duration = 15f; // Duration for progress to reach max, in seconds
     public string nextSceneName = "NextScene"; // Name of the scene to load
 
@@ -14,8 +14,8 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        progressBar.value = 0; // Start progress at 0
-        winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
+        progressBar.value = progressBar.maxValue; // Start progress at 0
+        //winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
     }
 
     private void Update()
@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             // Calculate the progress percentage based on elapsed time and duration
-            float progress = Mathf.Clamp01(elapsedTime / duration);
+            float progress = progressBar.maxValue - Mathf.Clamp01(elapsedTime / duration);
 
             // Set the slider's value to the calculated progress
             progressBar.value = progress * progressBar.maxValue;
@@ -34,19 +34,16 @@ public class Manager : MonoBehaviour
             // Check if the progress has completed
             if (elapsedTime >= duration)
             {
-                ShowWinScreen(); // Show the win screen
+                ShowLoseScreen(); // Show the win screen
                 gameWon = true;
             }
         }
     }
 
-    private void ShowWinScreen()
+    private void ShowLoseScreen()
     {
-        // Set the win screen image to fully visible
-        winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 1);
-
-        // Delay to give time for win screen to be visible before scene change
-        Invoke("LoadNextScene", 2f); // Change 2f to any delay time you want
+        Debug.Log("Lost the game");
+        //Invoke("LoadNextScene", 2f); // Change 2f to any delay time you want
     }
 
     private void LoadNextScene()
