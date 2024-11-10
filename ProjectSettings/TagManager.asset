@@ -45,9 +45,12 @@ TagManager:
   - name: Background
     uniqueID: 548089749
     locked: 0
+  - name: Tentacles
+    uniqueID: 863049485
+    locked: 0
   - name: Fryer
     uniqueID: 3784915985
     locked: 0
-  - name: Tentacles
-    uniqueID: 863049485
+  - name: Knife
+    uniqueID: 3759932889
     locked: 0

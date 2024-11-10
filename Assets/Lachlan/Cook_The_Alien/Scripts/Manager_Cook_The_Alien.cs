@@ -19,7 +19,7 @@ public class Manager : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         if (!gameWon)
         {
             // Increment the elapsed time by the time passed since last frame

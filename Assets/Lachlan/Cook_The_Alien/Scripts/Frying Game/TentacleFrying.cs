@@ -6,19 +6,15 @@ public class TentacleFrying : MonoBehaviour
 {
 
     private bool frying = false;
+    [SerializeField] private Sprite Fried;
+    [SerializeField] TentacleManagerFrying tentacleManager;
+    private bool finishedFrying;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        tentacleManager = FindObjectOfType<TentacleManagerFrying>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -37,6 +33,11 @@ public class TentacleFrying : MonoBehaviour
         {
             frying = false;
             StopCoroutine(fryingTentacle());
+
+            if (finishedFrying == true)
+            {
+                tentacleManager.TentacleFried();
+            }
         }
     }
 
@@ -47,7 +48,8 @@ public class TentacleFrying : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         if (frying == true)
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<SpriteRenderer>().sprite = Fried;
+            finishedFrying = true;
         }
         if (frying == false)
         {

@@ -8,13 +8,6 @@ public class TentacleManager : MonoBehaviour
     private int Tentacles = 6;
     public Scene fryingScene;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -29,8 +22,6 @@ public class TentacleManager : MonoBehaviour
     {
         Tentacles--;
     }
-
-    
 
 
     public IEnumerator ChangeScene()

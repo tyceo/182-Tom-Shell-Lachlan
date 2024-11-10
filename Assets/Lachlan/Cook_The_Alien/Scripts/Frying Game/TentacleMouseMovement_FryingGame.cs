@@ -30,7 +30,7 @@ public class TentacleMouseMovement_FryingGame : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("Mouse has entered the object");
+      
         mouseHovering = true;
 
     }
