@@ -1332,9 +1332,10 @@ MonoBehaviour:
   question1Answer3: 0
   tmpTextChanger: {fileID: 1346693405}
   currentQuestion: 0
+  numberanswered: 0
   progressBar: {fileID: 63214347}
   winScreen: {fileID: 1623172021}
-  duration: 15
+  duration: 10
   nextSceneName: Tom_Connect_The_Cable
 --- !u!212 &1207146935
 SpriteRenderer:

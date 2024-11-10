@@ -12,12 +12,14 @@ public class QuestionManager : MonoBehaviour
     public int question1Answer3 = 0;
     public QuestionController tmpTextChanger;
     public int currentQuestion = 0;
+    public int numberanswered = 0;
+    
 
     public Slider progressBar;
 
     public RawImage winScreen; // Reference to the win screen image
     public float duration = 15f; // Duration for progress to reach max, in seconds
-    public string nextSceneName = "Tom_Connect_The_Cable"; // Name of the scene to load
+    public string nextSceneName = "Tom_Asteroid_Dodger"; // Name of the scene to load
 
     private float elapsedTime = 0f; // Tracks the elapsed time
     private bool gameWon = false;
@@ -28,7 +30,7 @@ public class QuestionManager : MonoBehaviour
         currentQuestion = 1;
         progressBar.value = 0; // Start progress at 0
         winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
-
+        currentQuestion = 1;
     }
 
     // Update is called once per frame
@@ -83,6 +85,17 @@ public class QuestionManager : MonoBehaviour
         tmpTextChanger.UpdateAnswer2Text("Pluto");
         tmpTextChanger.ChangeAnswer2TextColor(Color.red);
         tmpTextChanger.UpdateAnswer3Text("pluto");
+        tmpTextChanger.ChangeAnswer3TextColor(Color.yellow);
+    }
+    public void Question2()
+    {
+
+        tmpTextChanger.UpdateText("Question 2");
+        tmpTextChanger.UpdateAnswer1Text("answer 1");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.green);
+        tmpTextChanger.UpdateAnswer2Text("answer 2");
+        tmpTextChanger.ChangeAnswer2TextColor(Color.red);
+        tmpTextChanger.UpdateAnswer3Text("answer 3");
         tmpTextChanger.ChangeAnswer3TextColor(Color.yellow);
     }
 }
