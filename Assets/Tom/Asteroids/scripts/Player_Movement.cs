@@ -42,22 +42,22 @@ public class Player_Movement : MonoBehaviour
 
     private void HandleMovement()
     {
-        // Accelerate forward when 'W' is pressed
-        if (Input.GetKey(KeyCode.W))
+        // thrust forwards into space
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            // Apply acceleration in the direction the ship is facing
+            
             velocity += (Vector2)(transform.up * acceleration * Time.deltaTime);
         }
 
         // Move the ship based on its current velocity
         transform.position += (Vector3)velocity * Time.deltaTime;
 
-        // Handle rotation with 'A' and 'D'
-        float tiltInput = Input.GetAxis("Horizontal"); // -1 for 'A', 1 for 'D'
+        // turning
+        float tiltInput = Input.GetAxis("Horizontal"); // -1 for a 1 for d i think
         float tilt = tiltInput * tiltAngle;
 
         // Apply rotation
-        transform.Rotate(0, 0, -tilt * tiltSpeed * Time.deltaTime); // Rotate around the Z-axis
+        transform.Rotate(0, 0, -tilt * tiltSpeed * Time.deltaTime); 
     }
 
     private void CheckBoundaries()
