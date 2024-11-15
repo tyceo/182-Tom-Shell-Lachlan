@@ -10,7 +10,7 @@ public class TentacleMouseMovement_FryingGame : MonoBehaviour
     // Start is called before the first frame updat
     void Start()
     {
-        
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

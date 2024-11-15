@@ -7,12 +7,22 @@ public class TentacleManager : MonoBehaviour
 {
     private int Tentacles = 6;
     public Scene fryingScene;
+    [SerializeField] private AlienSquirming alienSquirm;
+
+    private void Start()
+    {
+        alienSquirm = FindObjectOfType<AlienSquirming>();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         if (Tentacles == 0) 
         {
+            alienSquirm.AlienDead();
+
+
             Debug.Log("NO MORE TENTACLES");
             StartCoroutine(ChangeScene());
         }
@@ -21,6 +31,7 @@ public class TentacleManager : MonoBehaviour
     public void ChangeTentacleAmount()
     {
         Tentacles--;
+        alienSquirm.alienDistressMeter++;
     }
 
 
