@@ -11,6 +11,7 @@ public class Rock : MonoBehaviour
     public float directionVariance = 45f;   // Variance of up to 45 degrees to each side (90 total)
     public float rotationSpeedMin = -100f;  // Minimum rotation speed in degrees per second
     public float rotationSpeedMax = 100f;   // Maximum rotation speed in degrees per second
+    public float timer = 8;
 
     private Vector3 targetPosition = Vector3.zero;  
     private Vector3 spawnPosition;
@@ -52,7 +53,7 @@ public class Rock : MonoBehaviour
             rotationSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
 
             // Set a 3-second timer for the asteroid's life
-            float timer = 8f;
+            //float timer = 8f;
 
             // Move asteroid toward the center and rotate it while the timer is active
             while (timer > 0)
