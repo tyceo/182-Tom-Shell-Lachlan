@@ -11,64 +11,53 @@ public class Rock : MonoBehaviour
     public float directionVariance = 45f;   // Variance of up to 45 degrees to each side (90 total)
     public float rotationSpeedMin = -100f;  // Minimum rotation speed in degrees per second
     public float rotationSpeedMax = 100f;   // Maximum rotation speed in degrees per second
-    public float timerahhh = 8;
+    public float timerDuration = 8f;        // Duration of the asteroid's lifetime
 
-    private Vector3 targetPosition = Vector3.zero;  
+    private Vector3 targetPosition = Vector3.zero;
     private Vector3 spawnPosition;
-    private float actualSpeed;                      
-    private float rotationSpeed;                    
-    /*
-    private void Start()
-    {
+    private float actualSpeed;
+    private float rotationSpeed;
 
-       
-    }
-    */
     IEnumerator Start()
-    {
-        yield return new WaitForSeconds(Random.Range(3f, 10f));
-        StartCoroutine(LaunchAsteroid());
-    }
-
-    private IEnumerator LaunchAsteroid()
     {
         while (true)
         {
-            
-            float angle = Random.Range(0, 360);
-            spawnPosition = targetPosition + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
+            yield return new WaitForSeconds(Random.Range(3f, 10f));
+            yield return StartCoroutine(LaunchAsteroid());
+        }
+    }
 
-            // Move asteroid to spawn position
-            transform.position = spawnPosition;
+    public IEnumerator LaunchAsteroid()
+    {
+        // Spawn position around the target
+        float angle = Random.Range(0, 360);
+        spawnPosition = targetPosition + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * spawnRadius;
 
-            // Calculate direction with random variance
-            Vector3 direction = (targetPosition - spawnPosition).normalized;
-            float varianceAngle = Random.Range(-directionVariance, directionVariance);
-            direction = Quaternion.Euler(0, 0, varianceAngle) * direction;
+        // Move asteroid to spawn position
+        transform.position = spawnPosition;
 
-            // Apply random speed variance
-            actualSpeed = speed + Random.Range(-speedVariance, speedVariance);
+        // Calculate direction with random variance
+        Vector3 direction = (targetPosition - spawnPosition).normalized;
+        float varianceAngle = Random.Range(-directionVariance, directionVariance);
+        direction = Quaternion.Euler(0, 0, varianceAngle) * direction;
 
-            // Assign a random rotation speed
-            rotationSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
+        // Apply random speed variance
+        actualSpeed = speed + Random.Range(-speedVariance, speedVariance);
 
-            // Set a 3-second timer for the asteroid's life
-            float timer = 8f;
+        // Assign a random rotation speed
+        rotationSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
 
-            // Move asteroid toward the center and rotate it while the timer is active
-            while (timer > 0)
-            {
-                // Move the asteroid forward with random speed
-                transform.position += direction * actualSpeed * Time.deltaTime;
+        // Timer for asteroid life
+        float timer = timerDuration;
 
-                // Rotate the asteroid
-                transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        // Move asteroid toward the center and rotate it while the timer is active
+        while (timer > 0)
+        {
+            transform.position += direction * actualSpeed * Time.deltaTime;
+            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-                timer -= Time.deltaTime;
-                yield return null;
-            }
-
-            
+            timer -= Time.deltaTime;
+            yield return null;
         }
     }
 }
