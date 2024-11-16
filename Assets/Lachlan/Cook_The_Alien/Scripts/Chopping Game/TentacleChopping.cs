@@ -9,11 +9,14 @@ public class TentacleChopping : MonoBehaviour
     private bool tentacleChopped = false;
     [SerializeField] private TentacleManager tentacleManager;
     [SerializeField] private GameObject correspondingChoppedTentacle;
-
+    private ChoppingBoardAudio choppingBoardAudio;
 
     private void Start()
     {
-            tentacleManager = (TentacleManager)FindAnyObjectByType(typeof(TentacleManager));
+
+        choppingBoardAudio = FindObjectOfType<ChoppingBoardAudio>();
+        tentacleManager = (TentacleManager)FindAnyObjectByType(typeof(TentacleManager));
+       
     }
 
 
@@ -24,6 +27,7 @@ public class TentacleChopping : MonoBehaviour
         {
             CreateChoppedTentacle();
             ChangeTentacleSprite();
+            choppingBoardAudio.choppingSound();
             tentacleChopped = true;
             tentacleManager.ChangeTentacleAmount();
         }
@@ -33,6 +37,8 @@ public class TentacleChopping : MonoBehaviour
         }
     }
 
+
+
     private void CreateChoppedTentacle()
     {
         correspondingChoppedTentacle.gameObject.SetActive(true);
@@ -41,6 +47,7 @@ public class TentacleChopping : MonoBehaviour
 
     private void ChangeTentacleSprite()
     {
-        Destroy(gameObject); //Expand once there are sprites
+        
+        Destroy(gameObject);
     }
 }
