@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CannonController : MonoBehaviour
 {
-    public GameObject projectilePrefab;  // Drag your projectile prefab here in the Inspector
-    public float projectileSpeed = 10f;  // Set a fixed speed for the projectile
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 10f;
+    public float cooldownDuration = 1f; // Cooldown duration of 1 second
+    private float timeOfLastShot = -1f; // Initialize to allow immediate shooting
 
     void Update()
     {
@@ -20,12 +22,12 @@ public class CannonController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 270));
 
-        // Check if the left mouse button is clicked
-        if (Input.GetMouseButtonDown(0))
+        // Check if the left mouse button is clicked and cooldown has passed
+        if (Input.GetMouseButtonDown(0) && Time.time >= timeOfLastShot + cooldownDuration)
         {
             SpawnProjectile(mousePosition);
+            timeOfLastShot = Time.time; // Update the timestamp of the last shot
         }
-
     }
 
     void SpawnProjectile(Vector3 targetPosition)
