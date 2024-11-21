@@ -16,8 +16,13 @@ public class QuestionManager : MonoBehaviour
     public int correctAnswer = 1;
     public bool gameLost = false;
     public bool gameStillGoing = true;
-    
-    
+
+    public SpriteRenderer targetSpriteRenderer; // Reference to the target object's SpriteRenderer
+    public Sprite sprite1; // First sprite
+    public Sprite sprite2; // Second sprite
+    public Sprite sprite3; // Third sprite
+
+
     public Slider progressBar;
 
     public RawImage winScreen; //lose
@@ -35,6 +40,7 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
+        targetSpriteRenderer.sprite = sprite2;
         gameWon = false;
         gameLost = false;
         gameStillGoing = true;
@@ -235,14 +241,15 @@ public class QuestionManager : MonoBehaviour
     
     public void Question1()
     {
-        correctAnswer = 2;
+        correctAnswer = 1;
         tmpTextChanger.UpdateText("What is The Dwarf Planet?"); 
         tmpTextChanger.UpdateAnswer1Text("Pluto");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.green);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.red);
         tmpTextChanger.UpdateAnswer2Text("Pluto");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.green);
         tmpTextChanger.UpdateAnswer3Text("pluto");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.yellow);
+        targetSpriteRenderer.sprite = sprite1;
     }
     public void Question2()
     {

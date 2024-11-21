@@ -33,7 +33,7 @@ public class CannonController : MonoBehaviour
     void SpawnProjectile(Vector3 targetPosition)
     {
         // Set the spawn position to (0, -5, 0) for the projectile
-        Vector3 spawnPosition = new Vector3(0, -5, 0);
+        Vector3 spawnPosition = new Vector3(0, -4.7f, 0);
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         // Calculate the direction from spawn to target and normalize to ensure constant speed

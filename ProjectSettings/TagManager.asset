@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 1175768431
+    locked: 0
+  - name: detail
+    uniqueID: 3256655935
+    locked: 0
   - name: words
     uniqueID: 2092355715
     locked: 0
