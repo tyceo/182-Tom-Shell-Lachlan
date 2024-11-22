@@ -39,10 +39,6 @@ public class Manager : MonoBehaviour
             }
         }
 
-        if (gameLose == true)
-        {
-            
-        }
     }
 
     private void ShowLoseScreen()
