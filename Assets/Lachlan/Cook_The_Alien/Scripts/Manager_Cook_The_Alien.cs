@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     public string nextSceneName = "NextScene"; // Name of the scene to load
 
     private float elapsedTime = 0f; // Tracks the elapsed time
-    private bool gameWon = false;
+    private bool gameLose = false;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class Manager : MonoBehaviour
 
     private void Update()
     { 
-        if (!gameWon)
+        if (!gameLose)
         {
             // Increment the elapsed time by the time passed since last frame
             elapsedTime += Time.deltaTime;
@@ -35,20 +35,21 @@ public class Manager : MonoBehaviour
             if (elapsedTime >= duration)
             {
                 ShowLoseScreen(); // Show the win screen
-                gameWon = true;
+                gameLose = true;
             }
+        }
+
+        if (gameLose == true)
+        {
+            
         }
     }
 
     private void ShowLoseScreen()
     {
         Debug.Log("Lost the game");
-        //Invoke("LoadNextScene", 2f); // Change 2f to any delay time you want
+        SceneManager.LoadScene("Lose_Scene");
     }
 
-    private void LoadNextScene()
-    {
-        // Load the specified next scene
-        SceneManager.LoadScene(nextSceneName);
-    }
+
 }
