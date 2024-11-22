@@ -425,7 +425,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05658865, y: -0.0865314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -436,7 +436,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.8004656, y: 5.2977376}
   m_EdgeRadius: 0
 --- !u!1 &489913072
 GameObject:
@@ -778,7 +778,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0070738792, y: 0.057687998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -789,7 +789,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.588257, y: 5.3554254}
   m_EdgeRadius: 0
 --- !u!1 &661617088
 GameObject:
@@ -1277,7 +1277,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.007075548, y: 0.014421582}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1288,7 +1288,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.8994966, y: 5.297739}
   m_EdgeRadius: 0
 --- !u!1 &1054063543
 GameObject:
@@ -1497,6 +1497,7 @@ MonoBehaviour:
   sprite1: {fileID: 21300000, guid: 403b77848ea3d9c418e8337125a97546, type: 3}
   sprite2: {fileID: 21300000, guid: 1a22dc0cb4d784644b9bd3744ddfc3bb, type: 3}
   sprite3: {fileID: 21300000, guid: e36c62e0d2f8f2e4180c9cbac364e9dc, type: 3}
+  bulletthing: {fileID: 7199808405936669375, guid: 22b44b66a5a2965408cf5635ac68422b, type: 3}
   progressBar: {fileID: 63214347}
   winScreen: {fileID: 1623172021}
   realwinScreen: {fileID: 1054063545}
@@ -1564,7 +1565,7 @@ Transform:
   m_GameObject: {fileID: 1207146933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.74, y: 5.49, z: 0}
+  m_LocalPosition: {x: 10.9, y: 4.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1690,7 +1691,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.830124, y: -0.00005040307, z: 0, w: 9.385529}
+  m_margin: {x: 7.830124, y: -0.00005040307, z: -1.1658478, w: 9.385529}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2156,8 +2157,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -725448781
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 403b77848ea3d9c418e8337125a97546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2228,7 +2229,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1809598221
 Canvas:
   m_ObjectHideFlags: 0
@@ -2238,7 +2239,7 @@ Canvas:
   m_GameObject: {fileID: 1809598218}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 1189032907}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2260,8 +2261,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809598218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1227458204}
@@ -2280,8 +2281,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2057256198
 GameObject:
   m_ObjectHideFlags: 0

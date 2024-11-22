@@ -22,6 +22,8 @@ public class QuestionManager : MonoBehaviour
     public Sprite sprite2; // Second sprite
     public Sprite sprite3; // Third sprite
 
+    public SpriteRenderer bulletthing;
+
 
     public Slider progressBar;
 
@@ -40,7 +42,8 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
-        targetSpriteRenderer.sprite = sprite2;
+        targetSpriteRenderer.sprite = sprite1;
+        bulletthing.sprite = sprite1;
         gameWon = false;
         gameLost = false;
         gameStillGoing = true;
@@ -244,12 +247,13 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 1;
         tmpTextChanger.UpdateText("What is The Dwarf Planet?"); 
         tmpTextChanger.UpdateAnswer1Text("Pluto");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
         tmpTextChanger.UpdateAnswer2Text("Pluto");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.green);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
         tmpTextChanger.UpdateAnswer3Text("pluto");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.yellow);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
         targetSpriteRenderer.sprite = sprite1;
+        bulletthing.sprite = sprite1;
     }
     public void Question2()
     {
@@ -277,23 +281,27 @@ public class QuestionManager : MonoBehaviour
     {
         correctAnswer = 2;
         tmpTextChanger.UpdateText("What is at the center of the Milky Way galaxy?"); 
-        tmpTextChanger.UpdateAnswer1Text("A cluster of neutron stars");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.UpdateAnswer1Text("A black hole");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
         tmpTextChanger.UpdateAnswer2Text("A black hole");
         tmpTextChanger.ChangeAnswer2TextColor(Color.black);
-        tmpTextChanger.UpdateAnswer3Text("A supernova remnant");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.UpdateAnswer3Text("A black hole");
+        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        targetSpriteRenderer.sprite = sprite2;
+        bulletthing.sprite = sprite2;
     }
     public void Question5()
     {
         correctAnswer = 3;
         tmpTextChanger.UpdateText("Outside of the sun, what is the closest star to Earth?");
-        tmpTextChanger.UpdateAnswer1Text("Sirius");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
-        tmpTextChanger.UpdateAnswer2Text("Betelgeuse");
+        tmpTextChanger.UpdateAnswer1Text("Alpha Centuari");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.UpdateAnswer2Text("Alpha Centuari");
         tmpTextChanger.ChangeAnswer2TextColor(Color.black);
         tmpTextChanger.UpdateAnswer3Text("Alpha Centuari");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        targetSpriteRenderer.sprite = sprite2;
+        bulletthing.sprite = sprite2;
     }
     public void Question6()
     {
@@ -333,11 +341,13 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 1;
         tmpTextChanger.UpdateText("What is the coldest place in the universe?");
         tmpTextChanger.UpdateAnswer1Text("The Boomerang Nebula");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
-        tmpTextChanger.UpdateAnswer2Text("The Cat’s Eye Nebula");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.UpdateAnswer2Text("The Boomerang Nebula");
         tmpTextChanger.ChangeAnswer2TextColor(Color.black);
-        tmpTextChanger.UpdateAnswer3Text("The Dark Void");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.UpdateAnswer3Text("The Boomerang Nebula");
+        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        targetSpriteRenderer.sprite = sprite1;
+        bulletthing.sprite = sprite1;
     }
     public void Question10()
     {
