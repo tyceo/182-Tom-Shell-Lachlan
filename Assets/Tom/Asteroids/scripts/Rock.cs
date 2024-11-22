@@ -18,13 +18,24 @@ public class Rock : MonoBehaviour
     private float actualSpeed;
     private float rotationSpeed;
 
+    public GameObject thisone;
+
     IEnumerator Start()
     {
+        thisone.SetActive(true);
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(3f, 10f));
             yield return StartCoroutine(LaunchAsteroid());
         }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            thisone.SetActive(false);
+        }
+
     }
 
     public IEnumerator LaunchAsteroid()

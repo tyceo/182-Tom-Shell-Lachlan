@@ -103,3 +103,5 @@ MonoBehaviour:
   directionVariance: 45
   rotationSpeedMin: -100
   rotationSpeedMax: 100
+  timerDuration: 8
+  thisone: {fileID: 6943317116325293283}

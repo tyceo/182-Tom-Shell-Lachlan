@@ -11,10 +11,12 @@ public class Player_Movement : MonoBehaviour
     public float acceleration = 5f; // Forward acceleration speed
     private Vector2 velocity; // Current velocity of the ship
     private Rigidbody2D rb;
+    public int health = 3;
 
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = 3;
     }
 
     private void Update()
@@ -29,13 +31,20 @@ public class Player_Movement : MonoBehaviour
             Application.Quit();
             
         }
+        if (health == 0)
+        {
+            Application.Quit();
+        }
+
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Rock") && Time.time < 25f )
         {
-            Application.Quit();
-            print("test");
+            health = health - 1;
+            //Application.Quit();
+            print(health);
         }
         
     }
