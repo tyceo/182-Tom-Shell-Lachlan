@@ -8,12 +8,17 @@ public class AIInput : MonoBehaviour
 
 
     private bool mouseHovering = false;
-    public string AiType = "Evil";
-
+    public bool AiEvil;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        int EvilChance = Random.Range(0, 2);
+        if (EvilChance == 0)
+        {
+            AiEvil = true;
+            manager.evilAICount++;
+        }
         manager.allAI.Add(this.gameObject);
     }
 
@@ -32,9 +37,16 @@ public class AIInput : MonoBehaviour
 
     private void HitTheAI()
     {
-        if(AiType == "Evil")
+        if(AiEvil == true)
         {
+            manager.evilAICount--;
             Destroy(gameObject);
+        }
+
+        if(AiEvil == false)
+        {
+            manager.playerHealth--;
+            Debug.LogWarning("WRONG");
         }
     }
 
