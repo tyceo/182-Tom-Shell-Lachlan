@@ -50,6 +50,12 @@ public class AIInput : MonoBehaviour
         }
     }
 
+    public void startEvilCoroutine()
+    {
+        
+    }
+
+
 
     private void OnMouseEnter()
     {
