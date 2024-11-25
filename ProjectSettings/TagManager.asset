@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Rock
+  - BlackHole
+  - Floor
+  - gravity1
+  - gravity2
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - Object
   - 
-  - 
-  - 
-  - 
+  - Floor
+  - background
+  - gravity
   - 
   - 
   - 
@@ -43,6 +47,9 @@ TagManager:
   - name: background
     uniqueID: 93009041
     locked: 0
+  - name: gravity
+    uniqueID: 1177276427
+    locked: 0
   - name: wall
     uniqueID: 1707170417
     locked: 0
@@ -57,4 +64,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 829320709
     locked: 0

@@ -13,6 +13,10 @@ public class Player_Movement : MonoBehaviour
     private Rigidbody2D rb;
     public int health = 3;
 
+    //black hole
+    
+
+
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +25,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        
+
         // Handle movement input
         HandleMovement();
         // Check for wall collisions
@@ -29,9 +33,9 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
-            
+
         }
-        if (health == 0)
+        if (health <= 0)
         {
             Application.Quit();
         }
@@ -40,13 +44,19 @@ public class Player_Movement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock") && Time.time < 25f )
+        if (collision.gameObject.CompareTag("Rock") && Time.time < 25f)
         {
             health = health - 1;
-            //Application.Quit();
+            Application.Quit();
             print(health);
         }
-        
+        if (collision.gameObject.CompareTag("BlackHole") && Time.time < 25f)
+        {
+            health = health - 3;
+            Application.Quit();
+            print(health);
+        }
+
     }
 
     private void HandleMovement()
@@ -54,7 +64,7 @@ public class Player_Movement : MonoBehaviour
         // thrust forwards into space
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            
+
             velocity += (Vector2)(transform.up * acceleration * Time.deltaTime);
         }
 
@@ -66,7 +76,7 @@ public class Player_Movement : MonoBehaviour
         float tilt = tiltInput * tiltAngle;
 
         // Apply rotation
-        transform.Rotate(0, 0, -tilt * tiltSpeed * Time.deltaTime); 
+        transform.Rotate(0, 0, -tilt * tiltSpeed * Time.deltaTime);
     }
 
     private void CheckBoundaries()
@@ -96,6 +106,4 @@ public class Player_Movement : MonoBehaviour
         transform.position = position;
     }
 }
-
-
 
