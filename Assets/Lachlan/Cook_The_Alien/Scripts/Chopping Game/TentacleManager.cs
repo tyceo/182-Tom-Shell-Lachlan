@@ -8,6 +8,8 @@ public class TentacleManager : MonoBehaviour
     private int Tentacles = 6;
     public Scene fryingScene;
     [SerializeField] private AlienSquirming alienSquirm;
+    
+
 
     private void Start()
     {

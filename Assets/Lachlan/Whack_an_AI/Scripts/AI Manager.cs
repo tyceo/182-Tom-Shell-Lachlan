@@ -5,7 +5,7 @@ using UnityEngine;
 public class AIManager : MonoBehaviour
 {
     //public GameObject[] allAI;
-    public List<GameObject> allAI = new List<GameObject>();
+    
     public int evilAICount;
     public int playerHealth = 2;
 

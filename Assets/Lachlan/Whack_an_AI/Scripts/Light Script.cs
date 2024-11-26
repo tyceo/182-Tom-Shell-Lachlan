@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class LightScript : MonoBehaviour
 {
-    [SerializeField] private AIInput AIReference;
+    [SerializeField] private AIInput aiReference;
 
     [SerializeField] private Sprite redLight;
     [SerializeField] private Sprite greenLight;
@@ -19,9 +19,10 @@ public class LightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        evilEvent.AddListener(startLightCoroutines);
         colourChance = Random.Range(0, 3);
         SetColour();
-        if (AIReference.AiEvil ==true)
+        if (aiReference.aiEvil ==true)
         {
             evilEvent.Invoke();
         }
@@ -31,10 +32,6 @@ public class LightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AIReference.AiEvil == true)
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = redLight;
-        }
 
     }
 
@@ -54,5 +51,27 @@ public class LightScript : MonoBehaviour
         }
     }
 
+
+    public void startLightCoroutines()
+    {
+        StartCoroutine(LightChangingCoroutine());
+    }
+
+    private IEnumerator LightChangingCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(aiReference.randomizedEvilIntervals);
+            gameObject.GetComponent<SpriteRenderer>().sprite = redLight;
+            yield return new WaitForSeconds(2);
+            if (aiReference == null)
+            {
+                break;
+            }
+            SetColour();
+
+
+        }
+    }
 
 }
