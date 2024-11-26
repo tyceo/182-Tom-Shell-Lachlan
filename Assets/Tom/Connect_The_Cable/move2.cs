@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platformMove : MonoBehaviour
+public class move2 : MonoBehaviour
 {
     public float moveSpeed = 2f; // Speed of the platform's movement
     public float moveRange = 3f; // Maximum distance the platform moves from its start point
 
     private Vector3 startPosition; // The starting position of the platform
-    private bool movingUp = true; // Direction of the platform's movement
+    private bool movingDown = true; // Direction of the platform's movement (starts by moving down)
 
     void Start()
     {
@@ -25,18 +25,7 @@ public class platformMove : MonoBehaviour
     private void MovePlatform()
     {
         // Determine the direction
-        if (movingUp)
-        {
-            // Move up
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-
-            // Check if the platform has reached the top
-            if (transform.position.y >= startPosition.y + moveRange)
-            {
-                movingUp = false;
-            }
-        }
-        else
+        if (movingDown)
         {
             // Move down
             transform.position += Vector3.down * moveSpeed * Time.deltaTime;
@@ -44,7 +33,18 @@ public class platformMove : MonoBehaviour
             // Check if the platform has reached the bottom
             if (transform.position.y <= startPosition.y - moveRange)
             {
-                movingUp = true;
+                movingDown = false; // Switch direction to up
+            }
+        }
+        else
+        {
+            // Move up
+            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+
+            // Check if the platform has reached the top
+            if (transform.position.y >= startPosition.y)
+            {
+                movingDown = true; // Switch direction to down
             }
         }
     }
