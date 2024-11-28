@@ -300,8 +300,8 @@ public class QuestionManager : MonoBehaviour
         tmpTextChanger.ChangeAnswer2TextColor(Color.black);
         tmpTextChanger.UpdateAnswer3Text("Alpha Centuari");
         tmpTextChanger.ChangeAnswer3TextColor(Color.black);
-        targetSpriteRenderer.sprite = sprite2;
-        bulletthing.sprite = sprite2;
+        targetSpriteRenderer.sprite = sprite3;
+        bulletthing.sprite = sprite3;
     }
     public void Question6()
     {
@@ -338,7 +338,7 @@ public class QuestionManager : MonoBehaviour
     }
     public void Question9()
     {
-        correctAnswer = 1;
+        correctAnswer = 2;
         tmpTextChanger.UpdateText("What is the coldest place in the universe?");
         tmpTextChanger.UpdateAnswer1Text("The Boomerang Nebula");
         tmpTextChanger.ChangeAnswer1TextColor(Color.black);
@@ -346,8 +346,8 @@ public class QuestionManager : MonoBehaviour
         tmpTextChanger.ChangeAnswer2TextColor(Color.black);
         tmpTextChanger.UpdateAnswer3Text("The Boomerang Nebula");
         tmpTextChanger.ChangeAnswer3TextColor(Color.black);
-        targetSpriteRenderer.sprite = sprite1;
-        bulletthing.sprite = sprite1;
+        targetSpriteRenderer.sprite = sprite2;
+        bulletthing.sprite = sprite2;
     }
     public void Question10()
     {
