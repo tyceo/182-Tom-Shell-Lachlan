@@ -21,13 +21,18 @@ public class QuestionManager : MonoBehaviour
     public Sprite sprite1; // First sprite
     public Sprite sprite2; // Second sprite
     public Sprite sprite3; // Third sprite
+    public Sprite sprite4; //better beleive it's the forth sprite
+
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
+    public AudioSource audioSource3;
 
     public SpriteRenderer bulletthing;
 
 
     public Slider progressBar;
 
-    public RawImage winScreen; //lose
+    public RawImage winScreen; // lose
     public RawImage realwinScreen;
     public float duration = 15f; // Duration for progress to reach max, in seconds
     public string nextSceneName = "Tom_Asteroid_Dodger"; 
@@ -103,6 +108,7 @@ public class QuestionManager : MonoBehaviour
             Debug.Log("answer received");
             if (correctAnswer == 1)
             {
+                audioSource2.Play();
                 NextFunction();
                 if (currentQuestion == 3)
                 {
@@ -122,6 +128,7 @@ public class QuestionManager : MonoBehaviour
             }
             else if (correctAnswer == 2 || correctAnswer == 3)
             {
+                audioSource3.Play();
                 gameLost = true;
             } 
         }
@@ -132,6 +139,7 @@ public class QuestionManager : MonoBehaviour
             question1Answer2 = 0;
             if (correctAnswer == 2)
             {
+                audioSource2.Play();
                 NextFunction();
                 if (currentQuestion == 3)
                 {
@@ -152,6 +160,7 @@ public class QuestionManager : MonoBehaviour
             }
             else if (correctAnswer == 1 || correctAnswer == 3)
             {
+                audioSource3.Play();
                 gameLost = true;
             }
         }
@@ -161,6 +170,7 @@ public class QuestionManager : MonoBehaviour
             question1Answer3 = 0;
             if (correctAnswer == 3)
             {
+                audioSource2.Play();
                 NextFunction();
                 if (currentQuestion == 3)
                 {
@@ -180,6 +190,7 @@ public class QuestionManager : MonoBehaviour
             }
             else if (correctAnswer == 2 || correctAnswer == 1)
             {
+                audioSource3.Play();
                 gameLost = true;
             }
         }
@@ -247,11 +258,11 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 1;
         tmpTextChanger.UpdateText("What is The Dwarf Planet?"); 
         tmpTextChanger.UpdateAnswer1Text("Pluto");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Pluto");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("pluto");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
         targetSpriteRenderer.sprite = sprite1;
         bulletthing.sprite = sprite1;
     }
@@ -260,33 +271,37 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 1; 
         tmpTextChanger.UpdateText("Approximately how old is the Universe?"); 
         tmpTextChanger.UpdateAnswer1Text("13.7 Billion years old");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.green);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("13.7 Million years old");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("13.7 Thousand years old");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question3()
     {
         correctAnswer = 3;
         tmpTextChanger.UpdateText("What is the most common type of star found in the Milky Way?"); 
         tmpTextChanger.UpdateAnswer1Text("Blue Giant Stars");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("White Dwarf Stars");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Red Dwarf Stars");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question4()
     {
         correctAnswer = 2;
         tmpTextChanger.UpdateText("What is at the center of the Milky Way galaxy?"); 
         tmpTextChanger.UpdateAnswer1Text("A black hole");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("A black hole");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("A black hole");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
         targetSpriteRenderer.sprite = sprite2;
         bulletthing.sprite = sprite2;
     }
@@ -295,11 +310,11 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 3;
         tmpTextChanger.UpdateText("Outside of the sun, what is the closest star to Earth?");
         tmpTextChanger.UpdateAnswer1Text("Alpha Centuari");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Alpha Centuari");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Alpha Centuari");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
         targetSpriteRenderer.sprite = sprite3;
         bulletthing.sprite = sprite3;
     }
@@ -308,44 +323,50 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 2;
         tmpTextChanger.UpdateText("Where is the Oort Cloud located?");
         tmpTextChanger.UpdateAnswer1Text("Between Mars and Jupiter");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Past Pluto");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Beyond the Kuiper Belt");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question7()
     {
         correctAnswer = 1;
         tmpTextChanger.UpdateText("Approximately how many miles is a lightyear?");
         tmpTextChanger.UpdateAnswer1Text("5.9 Trillion miles");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("1.9 Billion miles");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("12.3 Million miles");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question8()
     {
         correctAnswer = 2;
         tmpTextChanger.UpdateText("What accounts for approximately 85% of matter in the universe?");
         tmpTextChanger.UpdateAnswer1Text("Antimatter");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Dark Matter");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Intergalactic Gas");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question9()
     {
         correctAnswer = 2;
         tmpTextChanger.UpdateText("What is the coldest place in the universe?");
         tmpTextChanger.UpdateAnswer1Text("The Boomerang Nebula");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("The Boomerang Nebula");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("The Boomerang Nebula");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
         targetSpriteRenderer.sprite = sprite2;
         bulletthing.sprite = sprite2;
     }
@@ -354,66 +375,78 @@ public class QuestionManager : MonoBehaviour
         correctAnswer = 1;
         tmpTextChanger.UpdateText("What percent of the Milky Way is visible from Earth?");
         tmpTextChanger.UpdateAnswer1Text("0.000003%");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("0.5%");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("1.3");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question11()
     {
         correctAnswer = 2;
         tmpTextChanger.UpdateText("How many stars are in the Milky Way?");
         tmpTextChanger.UpdateAnswer1Text("100 Million");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("100 Billion");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("100 Trillion");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question12()
     {
         correctAnswer = 1;
         tmpTextChanger.UpdateText("What three things are comets made out of?");
         tmpTextChanger.UpdateAnswer1Text("Dust, rocks, and ice");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Gases, crystals, and lava");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Metals, ice, and gas");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question13()
     {
         correctAnswer = 3;
         tmpTextChanger.UpdateText("What is the name of the main theory that describes how our universe was created?");
         tmpTextChanger.UpdateAnswer1Text("The Cosmic Inflation Theory");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("The Steady State Theory");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("The Big Bang Theory");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question14()
     {
         correctAnswer = 3;
         tmpTextChanger.UpdateText("What type of galaxy is the Milky Way?");
         tmpTextChanger.UpdateAnswer1Text("Elliptical");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Epic");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Spiral");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
     public void Question15()
     {
         correctAnswer = 3;
         tmpTextChanger.UpdateText("What is another name for the North Star?");
         tmpTextChanger.UpdateAnswer1Text("Sirius");
-        tmpTextChanger.ChangeAnswer1TextColor(Color.blue);
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
         tmpTextChanger.UpdateAnswer2Text("Big bird");
-        tmpTextChanger.ChangeAnswer2TextColor(Color.black);
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
         tmpTextChanger.UpdateAnswer3Text("Polaris");
-        tmpTextChanger.ChangeAnswer3TextColor(Color.red);
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        targetSpriteRenderer.sprite = sprite4;
+        bulletthing.sprite = sprite4;
     }
 
 

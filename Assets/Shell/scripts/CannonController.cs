@@ -8,6 +8,7 @@ public class CannonController : MonoBehaviour
     public float projectileSpeed = 10f;
     public float cooldownDuration = 1f; // Cooldown duration of 1 second
     private float timeOfLastShot = -1f; // Initialize to allow immediate shooting
+    public AudioSource audioSource1;
 
     void Update()
     {
@@ -34,6 +35,7 @@ public class CannonController : MonoBehaviour
     {
         // Set the spawn position to (0, -5, 0) for the projectile
         Vector3 spawnPosition = new Vector3(0, -4.7f, 0);
+        audioSource1.Play();
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         // Calculate the direction from spawn to target and normalize to ensure constant speed
