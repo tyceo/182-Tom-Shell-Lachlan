@@ -178,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 93009041
-  m_SortingLayer: -5
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -761,6 +761,10 @@ PrefabInstance:
       propertyPath: speedVariance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5772581429848832237, guid: 0a64c646148f25a4fb59407ab8338b42, type: 3}
+      propertyPath: timerDuration
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6634374456758740459, guid: 0a64c646148f25a4fb59407ab8338b42, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.1
@@ -1263,6 +1267,9 @@ MonoBehaviour:
   tiltSpeed: 7
   acceleration: 15
   health: 3
+  hurtnone: {fileID: 21300000, guid: dd775205ec686a349a98a7a831c09667, type: 3}
+  hurtsome: {fileID: 21300000, guid: c4ade450606f28b42bf40e128cb5c97c, type: 3}
+  hurtlot: {fileID: 21300000, guid: 52d664d762bb61b4ca940442eee3b452, type: 3}
 --- !u!58 &557539040
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3354,7 +3361,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 93009041
-  m_SortingLayer: -5
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9036519a2591cdd42850f367e38791ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

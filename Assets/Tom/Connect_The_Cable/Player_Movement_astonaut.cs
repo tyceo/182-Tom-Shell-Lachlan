@@ -11,6 +11,7 @@ public class Player_Movement_astonaut : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    
 
 
     void Start()
@@ -18,6 +19,7 @@ public class Player_Movement_astonaut : MonoBehaviour
         
         rb = GetComponent<Rigidbody2D>();
         Physics2D.gravity = new Vector3(0f, -10f, 0f);
+        //winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
     }
 
     void Update()
