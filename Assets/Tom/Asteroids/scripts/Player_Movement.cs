@@ -12,24 +12,43 @@ public class Player_Movement : MonoBehaviour
     private Vector2 velocity; // Current velocity of the ship
     private Rigidbody2D rb;
     public int health = 3;
+
+    public SpriteRenderer ship;
     public Sprite hurtnone;
     public Sprite hurtsome;
     public Sprite hurtlot;
 
     //black hole
 
-
+    
 
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = 3;
-        gameObject.GetComponent<SpriteRenderer>().sprite = hurtsome;
+        ship.sprite = hurtsome;
     }
 
     private void Update()
     {
         
+        if (health == 3)
+        {
+            ship.sprite = hurtnone;
+        }
+        if (health == 2)
+        {
+            ship.sprite = hurtsome;
+        }
+        if (health == 1)
+        {
+            ship.sprite = hurtlot;
+        }
+        if (health == 0)
+        {
+            ship.sprite = hurtlot;
+        }
+
         // Handle movement input
         HandleMovement();
         // Check for wall collisions
@@ -56,7 +75,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("BlackHole") && Time.time < 25f)
         {
-            health = health - 3;
+            health = health - 1;
             Application.Quit();
             print(health);
         }
