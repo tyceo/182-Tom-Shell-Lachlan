@@ -11,6 +11,8 @@ public class StoryManager : MonoBehaviour
     // Reference to the object whose sprite will change
     public GameObject Choise1;
     public GameObject Choise2;
+    public int OneHit;
+    public int OneHit2;
 
     void Awake()
     {
@@ -19,6 +21,8 @@ public class StoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OneHit = 0;
+        OneHit2 = 0;
         randomIndex = Random.Range(0, spriteOptions.Length);
         randomIndex2 = Random.Range(0, spriteOptions.Length);
 
@@ -37,6 +41,55 @@ public class StoryManager : MonoBehaviour
             randomIndex2 = Random.Range(0, spriteOptions.Length);
             SpriteRenderer spriteRenderer2 = Choise2.GetComponent<SpriteRenderer>();
             spriteRenderer2.sprite = spriteOptions[randomIndex2];
+        }
+        if (OneHit == 1)
+        {
+            OneHit = 0;
+            if (randomIndex == 0)
+            {
+                cookalien();
+            }
+            if (randomIndex == 1)
+            {
+                aibad();
+            }
+            if (randomIndex == 2)
+            {
+                spaceship();
+            }
+            if (randomIndex == 3)
+            {
+                connectcable();
+            }
+            if (randomIndex == 4)
+            {
+                trivia();
+            }
+        }
+
+        if (OneHit2 == 1)
+        {
+            OneHit2 = 0;
+            if (randomIndex2 == 0)
+            {
+                cookalien();
+            }
+            if (randomIndex2 == 1)
+            {
+                aibad();
+            }
+            if (randomIndex2 == 2)
+            {
+                spaceship();
+            }
+            if (randomIndex2 == 3)
+            {
+                connectcable();
+            }
+            if (randomIndex2 == 4)
+            {
+                trivia();
+            }
         }
     }
 

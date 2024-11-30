@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Option2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public StoryManager StoryManager;
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
+        // Check if the object that collided with this block is the projectile
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StoryManager.OneHit2 = 1;
+            // Handle the collision
+            Debug.Log("Projectile hit the block!");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

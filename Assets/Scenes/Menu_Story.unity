@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 266112422}
   m_Layer: 0
   m_Name: asset-G6-rocketShip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,6 +483,8 @@ MonoBehaviour:
   randomIndex2: 0
   Choise1: {fileID: 2087758084}
   Choise2: {fileID: 1986667783}
+  OneHit: 0
+  OneHit2: 0
 --- !u!4 &955939581
 Transform:
   m_ObjectHideFlags: 0
@@ -649,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7c0f7fcbac33c458acc2f1cfccb299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoryManager: {fileID: 955939580}
 --- !u!61 &1986667787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -820,6 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd212ca91be7324eab21d73375cf973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoryManager: {fileID: 955939580}
 --- !u!61 &2087758088
 BoxCollider2D:
   m_ObjectHideFlags: 0
