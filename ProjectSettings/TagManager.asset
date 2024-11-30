@@ -13,6 +13,8 @@ TagManager:
   - bad
   - tetherfloor
   - tether
+  - Option1
+  - Option2
   layers:
   - Default
   - TransparentFX
