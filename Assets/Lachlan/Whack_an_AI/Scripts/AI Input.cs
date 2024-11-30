@@ -57,6 +57,7 @@ public class AIInput : MonoBehaviour
     public void startEvilCoroutine()
     {
         StartCoroutine(createEvilEffect());
+        Debug.Log("should be routing");
     }
 
     public IEnumerator createEvilEffect()
@@ -65,11 +66,11 @@ public class AIInput : MonoBehaviour
         {
             randomizedEvilIntervals = Random.Range(1, 4);
             yield return new WaitForSeconds(randomizedEvilIntervals);
-            Debug.Log("IM EVIL");
+            //Debug.Log("IM EVIL");
             currentlyEvil = true;
             yield return new WaitForSeconds(2);
             currentlyEvil = false;
-            Debug.Log("Not Evil");
+            //Debug.Log("Not Evil");
         }
 
     }

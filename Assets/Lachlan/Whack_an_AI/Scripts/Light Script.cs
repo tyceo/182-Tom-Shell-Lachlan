@@ -13,7 +13,7 @@ public class LightScript : MonoBehaviour
     [SerializeField] private Sprite purpleLight;
     [SerializeField] private int colourChance;
     public UnityEvent evilEvent;
-
+    private bool startedEvents = false;
 
 
     // Start is called before the first frame update
@@ -22,17 +22,17 @@ public class LightScript : MonoBehaviour
         evilEvent.AddListener(startLightCoroutines);
         colourChance = Random.Range(0, 3);
         SetColour();
-        if (aiReference.aiEvil ==true)
-        {
-            evilEvent.Invoke();
-        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (aiReference.aiEvil == true && startedEvents == false)
+        {
+            evilEvent.Invoke();
+            startedEvents = true;
+        }
     }
 
     private void SetColour()
