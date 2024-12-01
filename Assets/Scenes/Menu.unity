@@ -1068,7 +1068,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 572487842}
         m_TargetAssemblyTypeName: menu, Assembly-CSharp
-        m_MethodName: showlevelselect
+        m_MethodName: storymode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

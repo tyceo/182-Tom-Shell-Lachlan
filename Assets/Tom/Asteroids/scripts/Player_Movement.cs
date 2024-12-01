@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     public Sprite hurtnone;
     public Sprite hurtsome;
     public Sprite hurtlot;
+    public int dead = 0;
 
     //black hole
 
@@ -31,7 +33,23 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        
+        if (GameObject.Find("StoryManager") != null)
+        {
+            Debug.Log("The object exists!");
+            
+            if (dead == 1)
+            {
+                SceneManager.LoadScene("Lose");
+            }
+        }
+        else
+        {
+            
+            if (dead == 1)
+            {
+                SceneManager.LoadScene("Lose");
+            }
+        }
         if (health == 3)
         {
             ship.sprite = hurtnone;
@@ -46,7 +64,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (health == 0)
         {
-            ship.sprite = hurtlot;
+            dead = 1;
         }
 
         // Handle movement input

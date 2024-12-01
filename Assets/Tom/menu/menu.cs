@@ -24,6 +24,10 @@ public class menu : MonoBehaviour
         if (mainmenu != null) mainmenu.SetActive(false);
         if (levelselect != null) levelselect.SetActive(true);
     }
+    public void storymode()
+    {
+        SceneManager.LoadScene("Menu_Story");
+    }
     public void quit()
     {
         Debug.Log("Quit");

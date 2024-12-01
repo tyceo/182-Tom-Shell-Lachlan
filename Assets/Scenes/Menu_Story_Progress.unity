@@ -474,122 +474,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &955939579
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 955939581}
-  - component: {fileID: 955939580}
-  - component: {fileID: 955939582}
-  m_Layer: 0
-  m_Name: StoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &955939580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955939579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800be861eb9d36a4782b31fc036fc752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteOptions:
-  - {fileID: 21300000, guid: 2d3421b90fce07b4e9b17e9777e5e341, type: 3}
-  - {fileID: 21300000, guid: dfcdcf3b2e7053d4c9eb3a0c6a0233ad, type: 3}
-  - {fileID: 21300000, guid: e9e003d3592890144a71a9475429e5f0, type: 3}
-  - {fileID: 21300000, guid: d877bd68d7f77c045a27702304e72f0c, type: 3}
-  - {fileID: 21300000, guid: 97246dcabdd072d4984386242ed61b20, type: 3}
-  randomIndex: 0
-  randomIndex2: 0
-  Choise1: {fileID: 2087758084}
-  Choise2: {fileID: 1986667783}
-  OneHit: 0
-  OneHit2: 0
-  NumberOfLevelsDone: 0
-  NumberOfLevelsNeeded: 7
-  IsStorymode: 0
-  Win: 0
-  Lose: 0
-  Test: 0
-  menuStoryVisitCount: 0
---- !u!4 &955939581
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955939579}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.46, y: 0.51, z: 0.1991221}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &955939582
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955939579}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e87ef52536fb2c24bae2cd8cd719b89f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.4, y: 9.88}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1986667783
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7c0f7fcbac33c458acc2f1cfccb299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoryManager: {fileID: 955939580}
+  StoryManager: {fileID: 0}
 --- !u!61 &1986667787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -861,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd212ca91be7324eab21d73375cf973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoryManager: {fileID: 955939580}
+  StoryManager: {fileID: 0}
 --- !u!61 &2087758088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,5 +827,4 @@ SceneRoots:
   - {fileID: 266112421}
   - {fileID: 2087758086}
   - {fileID: 1986667785}
-  - {fileID: 955939581}
   - {fileID: 543380305}

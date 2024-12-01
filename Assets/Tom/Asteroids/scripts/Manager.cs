@@ -11,15 +11,35 @@ public class Manager : MonoBehaviour
 
     private float elapsedTime = 0f; // Tracks the elapsed time
     private bool gameWon = false;
+    public bool gameOver = false;
+    
 
     private void Start()
     {
         progressBar.value = 0; // Start progress at 0
         winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
     }
-
-    private void Update()
+    
+    public void Update()
     {
+        
+        //story or not story mode
+        if (GameObject.Find("StoryManager") != null)
+        {
+            Debug.Log("The object exists!");
+            if (gameWon == true)
+            {
+                SceneManager.LoadScene("Menu_Story_Progress");
+            }
+        }
+        else
+        {
+            if (gameWon == true)
+            {
+                SceneManager.LoadScene("Win");
+            }
+        }
+
         if (!gameWon)
         {
             // Increment the elapsed time by the time passed since last frame
@@ -34,7 +54,7 @@ public class Manager : MonoBehaviour
             // Check if the progress has completed
             if (elapsedTime >= duration)
             {
-                ShowWinScreen(); // Show the win screen
+                //ShowWinScreen(); // Show the win screen
                 gameWon = true;
             }
         }

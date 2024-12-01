@@ -11,7 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tom_Asteroid_Dodger.unity
     guid: ab7927b609184434f8c867484f44080d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tom_Connect_The_Cable.unity
     guid: 0416d7e4fa40e2e4187c11d277fbb4be
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 335bb0475d9f9a6488de11b04608f20e
+  - enabled: 1
+    path: Assets/Scenes/Menu_Story.unity
+    guid: 6521bc7c41ecf3b4bbbb03ea7ff97318
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: a964cde3756c0a44184e6c4555e60360
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 7a30c7a18eaf90e4082e3f59bd5e103d
+  - enabled: 1
+    path: Assets/Scenes/Menu_Story_Progress.unity
+    guid: e36a7bf25187b1b439d90967d953a28f
   m_configObjects: {}
