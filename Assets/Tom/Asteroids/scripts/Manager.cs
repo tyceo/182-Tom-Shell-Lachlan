@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
         //story or not story mode
         if (GameObject.Find("StoryManager") != null)
         {
-            Debug.Log("The object exists!");
+            //Debug.Log("The object exists!");
             if (gameWon == true)
             {
                 SceneManager.LoadScene("Menu_Story_Progress");

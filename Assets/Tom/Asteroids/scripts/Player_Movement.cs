@@ -35,7 +35,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (GameObject.Find("StoryManager") != null)
         {
-            Debug.Log("The object exists!");
+            //Debug.Log("The object exists!");
             
             if (dead == 1)
             {
@@ -85,13 +85,13 @@ public class Player_Movement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock") && Time.time < 25f)
+        if (collision.gameObject.CompareTag("Rock"))
         {
             health = health - 1;
             Application.Quit();
             print(health);
         }
-        if (collision.gameObject.CompareTag("BlackHole") && Time.time < 25f)
+        if (collision.gameObject.CompareTag("BlackHole"))
         {
             health = health - 1;
             Application.Quit();

@@ -50,7 +50,7 @@ public class Black_Hole1 : MonoBehaviour
         thisone2.SetActive(true);
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(7f, 15f));
+            yield return new WaitForSeconds(Random.Range(10f, 20f));
             yield return StartCoroutine(GrowAndShrink());
         }
     }

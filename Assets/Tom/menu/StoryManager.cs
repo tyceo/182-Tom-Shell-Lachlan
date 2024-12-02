@@ -18,32 +18,41 @@ public class StoryManager : MonoBehaviour
     public int IsStorymode = 0;
     public int Win = 0;
     public int Lose = 0;
-    public int Test = 0;
+    
+    public static StoryManager instance;
+    public static StoryManager Instance
+    {
+        get { return instance; }
+    }
 
-    private static StoryManager instance;
-    //private Dictionary<string, int> sceneVisitCounts = new Dictionary<string, int>();
-    public int menuStoryVisitCount = 0;
+    public int SceneChangeCount { get; private set; } = 0;
 
     void Awake()
     {
         IsStorymode = 1;
-        if (instance != null)
-        {
-            // Destroy the old instance and replace it with the new one
-            Destroy(instance.gameObject);
-            
-        }
-
-        instance = this;
         DontDestroyOnLoad(gameObject);
 
-        //SceneManager.sceneLoaded += OnSceneLoaded;
-        
-}
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneChangeCount++;
+        Debug.Log($"Scene has changed {SceneChangeCount} times.");
+    }
     // Start is called before the first frame update
     void Start()
     {
-        FinishLevel();
+        
         NumberOfLevelsDone = 0;
         OneHit = 0;
         OneHit2 = 0;
@@ -62,6 +71,7 @@ public class StoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        /*
         if (Lose == 1)
         {
             Destroy(gameObject);
@@ -70,67 +80,43 @@ public class StoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        */
+        
+
+    }
+    
+    
+
+    // Update is called once per frame
+    void Update()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "Win")
         {
             Debug.Log("We are in the Win scene");
             Destroy(gameObject);
         }
+
         if (currentScene.name == "Lose")
         {
             Debug.Log("We are in the Lose scene!");
             Destroy(gameObject);
         }
-    }
-    /*
-    private void OnDestroy()
-    {
-        // Unsubscribe from the scene loaded event
-        if (instance == this)
+        if (currentScene.name == "Menu")
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Debug.Log("We are in the Win scene");
+            Destroy(gameObject);
         }
-    }
-    */
-
-    public void FinishLevel()
-    {
-        NumberOfLevelsDone = NumberOfLevelsDone + 1;
-    }
-    
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Check if the loaded scene is "Menu_Story"
-        if (scene.name == "MenuStory")
+        if (SceneChangeCount == 7)
         {
-            menuStoryVisitCount++;
-            Debug.Log($"Visited Menu_Story {menuStoryVisitCount} times.");
+            // currentScene = SceneManager.GetActiveScene();
+            if (currentScene.name != "Lose")
+            {
+                SceneManager.LoadScene("Win");
+            }
+            
         }
-    }
-
-    /*
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        string sceneName = scene.name;
-
-        // Increment the visit count for the current scene
-        if (sceneVisitCounts.ContainsKey(sceneName))
-        {
-            sceneVisitCounts[sceneName]++;
-        }
-        else
-        {
-            sceneVisitCounts[sceneName] = 1;
-        }
-        // Debug log for testing
-        Debug.Log($"Visited {sceneName} {sceneVisitCounts[sceneName]} time(s).");
-    }
-    */
-
-    // Update is called once per frame
-    void Update()
-    {
-        
         //kill when enter normal level select
         
 
@@ -141,12 +127,12 @@ public class StoryManager : MonoBehaviour
             randomIndex2 = Random.Range(0, spriteOptions.Length);
             SpriteRenderer spriteRenderer2 = Choise2.GetComponent<SpriteRenderer>();
             spriteRenderer2.sprite = spriteOptions[randomIndex2];
-            Debug.Log("This is 2:");
-            Debug.Log(randomIndex2);
+            
         }
         if (OneHit == 1)
         {
             OneHit = 0;
+            spaceship(); // test
             if (randomIndex == 0)
             {
                 cookalien();
