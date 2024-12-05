@@ -7,19 +7,19 @@ public class LightScript : MonoBehaviour
 {
     [SerializeField] private AIInput aiReference;
 
-    [SerializeField] private Sprite redLight;
+    [SerializeField] public Sprite redLight;
     [SerializeField] private Sprite greenLight;
     [SerializeField] private Sprite blueLight;
     [SerializeField] private Sprite purpleLight;
     [SerializeField] private int colourChance;
-    public UnityEvent evilEvent;
+    
     private bool startedEvents = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        evilEvent.AddListener(startLightCoroutines);
+        
         colourChance = Random.Range(0, 3);
         SetColour();
         
@@ -30,12 +30,12 @@ public class LightScript : MonoBehaviour
     {
         if (aiReference.aiEvil == true && startedEvents == false)
         {
-            evilEvent.Invoke();
+            aiReference.startEvilCoroutine();
             startedEvents = true;
         }
     }
 
-    private void SetColour()
+    public void SetColour()
     {
         if (colourChance == 0)
         {
@@ -52,26 +52,5 @@ public class LightScript : MonoBehaviour
     }
 
 
-    public void startLightCoroutines()
-    {
-        StartCoroutine(LightChangingCoroutine());
-    }
-
-    private IEnumerator LightChangingCoroutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(aiReference.randomizedEvilIntervals);
-            gameObject.GetComponent<SpriteRenderer>().sprite = redLight;
-            yield return new WaitForSeconds(2);
-            if (aiReference == null)
-            {
-                break;
-            }
-            SetColour();
-
-
-        }
-    }
-
+   
 }

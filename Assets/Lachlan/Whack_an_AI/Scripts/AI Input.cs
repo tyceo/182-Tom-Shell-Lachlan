@@ -6,11 +6,21 @@ public class AIInput : MonoBehaviour
 {
     [SerializeField] private AIManager manager;
     [SerializeField] private LightScript lights;
+    [SerializeField] private Hammer hammer;
+    [SerializeField] private Sprite AnimationFrame1;
+    [SerializeField] private Sprite AnimationFrame2;
+    [SerializeField] private Sprite AnimationFrame3;
+    [SerializeField] private Sprite AnimationFrame4;
+    [SerializeField] private Sprite AnimationFrame5;
+    [SerializeField] private Sprite AnimationFrame6;
 
-    private bool mouseHovering = false;
+
+    [SerializeField] private bool mouseHovering = false;
     public bool aiEvil;
     public bool currentlyEvil = false;
     public int randomizedEvilIntervals;
+    private bool dead;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +33,22 @@ public class AIInput : MonoBehaviour
             manager.evilAICount++;
         }
         
-        lights.evilEvent.AddListener(startEvilCoroutine);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mouseHovering == true)
+        if (mouseHovering == true && dead != true)
         {
+
             if (Input.GetMouseButtonDown(0))
             {
                 HitTheAI();
             }
         }
+
+
     }
 
 
@@ -44,7 +57,9 @@ public class AIInput : MonoBehaviour
         if(currentlyEvil == true)
         {
             manager.evilAICount--;
-            Destroy(gameObject); //play animation then destroy
+            dead = true;
+            StartCoroutine(AnimationAI());
+            
         }
 
         if(currentlyEvil == false)
@@ -56,9 +71,28 @@ public class AIInput : MonoBehaviour
 
     public void startEvilCoroutine()
     {
+        
         StartCoroutine(createEvilEffect());
         Debug.Log("should be routing");
     }
+
+
+    private IEnumerator AnimationAI()
+    {
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame1;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame2;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame3;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame4;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame5;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<SpriteRenderer>().sprite = AnimationFrame6;
+    }
+
 
     public IEnumerator createEvilEffect()
     {
@@ -66,11 +100,17 @@ public class AIInput : MonoBehaviour
         {
             randomizedEvilIntervals = Random.Range(1, 4);
             yield return new WaitForSeconds(randomizedEvilIntervals);
-            //Debug.Log("IM EVIL");
+            Debug.Log("IM EVIL");
             currentlyEvil = true;
+            lights.gameObject.GetComponent<SpriteRenderer>().sprite = lights.redLight;
             yield return new WaitForSeconds(2);
             currentlyEvil = false;
-            //Debug.Log("Not Evil");
+            Debug.Log("Not Evil");
+            lights.SetColour();
+            if (dead == true)
+            {
+                break;
+            }
         }
 
     }
@@ -78,12 +118,13 @@ public class AIInput : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        
         mouseHovering = true;
+        hammer.hammerHovering = true;
     }
 
     private void OnMouseExit()
     {
         mouseHovering = false;
+        hammer.hammerHovering = false;
     }
 }
