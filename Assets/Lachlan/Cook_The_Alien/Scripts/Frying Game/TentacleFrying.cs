@@ -54,13 +54,32 @@ public class TentacleFrying : MonoBehaviour
         if (frying == true)
         {
             yield return new WaitForSecondsRealtime(1.4f);
+            if (frying == false)
+            {
+                yield break;
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = slightlyCooked;
+
             yield return new WaitForSecondsRealtime(1.4f);
+            if (frying == false)
+            {
+                yield break;
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = cooked;
             finishedFrying = true;
+
             yield return new WaitForSecondsRealtime(1.4f);
+            if (frying == false)
+            {
+                yield break;
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = overcooked;
+       
             yield return new WaitForSecondsRealtime(1.8f);
+            if (frying == false)
+            {
+                yield break;
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = burntTentacle;
             burnt = true;
             finishedFrying = false;
