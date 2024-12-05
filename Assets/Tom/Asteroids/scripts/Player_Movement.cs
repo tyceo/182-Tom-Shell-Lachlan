@@ -78,7 +78,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (health <= 0)
         {
-            Application.Quit();
+            //Application.Quit();
         }
 
 
@@ -88,13 +88,13 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Rock"))
         {
             health = health - 1;
-            Application.Quit();
+            //Application.Quit();
             print(health);
         }
         if (collision.gameObject.CompareTag("BlackHole"))
         {
             health = health - 1;
-            Application.Quit();
+            //Application.Quit();
             print(health);
         }
 

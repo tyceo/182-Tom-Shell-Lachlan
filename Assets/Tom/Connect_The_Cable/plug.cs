@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class plug : MonoBehaviour
 {
@@ -16,12 +17,24 @@ public class plug : MonoBehaviour
     {
         
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("tether"))
         {
-            
+            if (GameObject.Find("StoryManager") != null)
+            {
+                SceneManager.LoadScene("Menu_Story_Progress");
+            }
+            else
+            {
+
+                SceneManager.LoadScene("Win");
+
+            }
+
         }
-        
+
     }
+
 }

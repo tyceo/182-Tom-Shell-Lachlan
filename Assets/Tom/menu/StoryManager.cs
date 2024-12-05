@@ -14,7 +14,7 @@ public class StoryManager : MonoBehaviour
     public int OneHit;
     public int OneHit2;
     public int NumberOfLevelsDone = 0;
-    public int NumberOfLevelsNeeded = 7;
+    public int NumberOfLevelsNeeded = 9;
     public int IsStorymode = 0;
     public int Win = 0;
     public int Lose = 0;
@@ -108,7 +108,7 @@ public class StoryManager : MonoBehaviour
             Debug.Log("We are in the Win scene");
             Destroy(gameObject);
         }
-        if (SceneChangeCount == 7)
+        if (SceneChangeCount >= NumberOfLevelsNeeded)
         {
             // currentScene = SceneManager.GetActiveScene();
             if (currentScene.name != "Lose")
@@ -132,7 +132,7 @@ public class StoryManager : MonoBehaviour
         if (OneHit == 1)
         {
             OneHit = 0;
-            spaceship(); // test
+            //spaceship(); // test
             if (randomIndex == 0)
             {
                 cookalien();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement_astonaut : MonoBehaviour
 {
@@ -50,6 +51,10 @@ public class Player_Movement_astonaut : MonoBehaviour
         if (other.CompareTag("gravity2"))
         {
             Physics2D.gravity = new Vector3(0f, -20f, 0f);
+        }
+        if (other.CompareTag("bad"))
+        {
+            SceneManager.LoadScene("Lose");
         }
     }
     void OnTriggerExit2D(Collider2D other)
