@@ -6,9 +6,14 @@ public class TentacleFrying : MonoBehaviour
 {
 
     private bool frying = false;
-    [SerializeField] private Sprite Fried;
+    [SerializeField] private Sprite slightlyCooked;
+    [SerializeField] private Sprite cooked;
+    [SerializeField] private Sprite overcooked;
+    [SerializeField] private Sprite burntTentacle; 
     [SerializeField] TentacleManagerFrying tentacleManager;
     private bool finishedFrying;
+    private bool burnt = false;
+
 
     private void Start()
     {
@@ -16,7 +21,7 @@ public class TentacleFrying : MonoBehaviour
     }
 
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         
         if (collision.gameObject.tag == "Fryer")
@@ -45,11 +50,20 @@ public class TentacleFrying : MonoBehaviour
     private IEnumerator fryingTentacle()
     {
         Debug.Log("start frying");
-        yield return new WaitForSecondsRealtime(5);
+        
         if (frying == true)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Fried;
+            yield return new WaitForSecondsRealtime(1.4f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = slightlyCooked;
+            yield return new WaitForSecondsRealtime(1.4f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = cooked;
             finishedFrying = true;
+            yield return new WaitForSecondsRealtime(1.4f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = overcooked;
+            yield return new WaitForSecondsRealtime(1.8f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = burntTentacle;
+            burnt = true;
+            finishedFrying = false;
         }
         if (frying == false)
         {

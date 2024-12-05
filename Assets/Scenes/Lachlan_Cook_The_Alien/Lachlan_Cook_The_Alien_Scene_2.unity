@@ -437,7 +437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: b71ad118a766bd847ae7d35111d5ee86, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: 40efa3c1e66f69845b7be5294bf3d5bf, type: 3}
+  cooked: {fileID: 21300000, guid: 6fdebf8ec8a211043b72060651abb43c, type: 3}
+  overcooked: {fileID: 21300000, guid: b71ad118a766bd847ae7d35111d5ee86, type: 3}
+  burntTentacle: {fileID: 21300000, guid: 5686de5bc25b24c469757a054c50dcd6, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!50 &182431626
 Rigidbody2D:
@@ -855,7 +858,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: e28f6b0a564c61b42946daae79df0fa4, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: d2bb4384196ab6c428f1712048f9e0e2, type: 3}
+  cooked: {fileID: 21300000, guid: cc7cef7b0be376841a0e6521de46d985, type: 3}
+  overcooked: {fileID: 21300000, guid: e28f6b0a564c61b42946daae79df0fa4, type: 3}
+  burntTentacle: {fileID: 21300000, guid: adef721f21531dd4e8ccb1297d786689, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!50 &436426065
 Rigidbody2D:
@@ -1192,7 +1198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: 0942eef755c23e44da57aca6e4c3a193, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: 1e011e077c145bf4fa49d379eef9430f, type: 3}
+  cooked: {fileID: 21300000, guid: a6ce58b4c17d20f43b94ff446b3eba97, type: 3}
+  overcooked: {fileID: 21300000, guid: 0942eef755c23e44da57aca6e4c3a193, type: 3}
+  burntTentacle: {fileID: 21300000, guid: f71df4cd8d7191743bf397f1a273068b, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!70 &883952394
 CapsuleCollider2D:
@@ -1541,7 +1550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: 4d94a44e629f5e94a97d144159400011, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: 690263387733fee4f8f36d3f4d831860, type: 3}
+  cooked: {fileID: 21300000, guid: 8af123a180a275841a9bbf0733d60ac9, type: 3}
+  overcooked: {fileID: 21300000, guid: 4d94a44e629f5e94a97d144159400011, type: 3}
+  burntTentacle: {fileID: 21300000, guid: 477a566443fbacb449eb43156c82f10a, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!50 &1386415127
 Rigidbody2D:
@@ -1718,7 +1730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: 25cd46549aaeffd4da9e7d7f66711913, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: 2e816dac43af19b49b5931095510ee66, type: 3}
+  cooked: {fileID: 21300000, guid: 83ab052830826ad47ab01478e18ebd9d, type: 3}
+  overcooked: {fileID: 21300000, guid: 25cd46549aaeffd4da9e7d7f66711913, type: 3}
+  burntTentacle: {fileID: 21300000, guid: 2ea4012efba53574daaec686fab33866, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!50 &1593462043
 Rigidbody2D:
@@ -2074,7 +2089,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e370b4f5f8558043a74dd7ace4ea211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fried: {fileID: 21300000, guid: fd630f2fc4b1e2248a9b4e4c61020581, type: 3}
+  slightlyCooked: {fileID: 21300000, guid: 7788e6d184b543a4d836308eaf0c6064, type: 3}
+  cooked: {fileID: 21300000, guid: d76d3a06dd36a01468fc14062e3d9907, type: 3}
+  overcooked: {fileID: 21300000, guid: fd630f2fc4b1e2248a9b4e4c61020581, type: 3}
+  burntTentacle: {fileID: 21300000, guid: a979ec0fd16816c4480a66b97ec892e8, type: 3}
   tentacleManager: {fileID: 0}
 --- !u!50 &2111762131
 Rigidbody2D:
