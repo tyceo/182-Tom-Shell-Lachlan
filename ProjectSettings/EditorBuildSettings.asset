@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Shell_Shoot_The_Right_Planet.unity
-    guid: b23843663346b0742ad481be559f79b0
+    path: Assets/Scenes/Lachlan_Cook_The_Alien/Lachlan_Cook_The_Alien_Scene_1.unity
+    guid: a5efd44927028fe47b4440c26b907f51
+  - enabled: 1
+    path: Assets/Scenes/Lachlan_Cook_The_Alien/Lachlan_Cook_The_Alien_Scene_2.unity
+    guid: 34874c283e5f7d143aeb26fefbe89f5a
+  - enabled: 1
+    path: Assets/Scenes/Lose_Scene.unity
+    guid: 471df1a01f2f3c14a930dd97d8a6a42b
   m_configObjects: {}
