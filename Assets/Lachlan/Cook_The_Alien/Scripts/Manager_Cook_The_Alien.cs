@@ -44,7 +44,7 @@ public class Manager : MonoBehaviour
     private void ShowLoseScreen()
     {
         Debug.Log("Lost the game");
-        SceneManager.LoadScene("Lose_Scene");
+        //LOSE CONDITION
     }
 
 

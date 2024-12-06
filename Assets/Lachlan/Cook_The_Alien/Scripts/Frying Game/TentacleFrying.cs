@@ -20,6 +20,16 @@ public class TentacleFrying : MonoBehaviour
         tentacleManager = FindObjectOfType<TentacleManagerFrying>();
     }
 
+    private void Update()
+    {
+        if (burnt == true)
+        {
+            StartCoroutine(BurntTentacle());
+        }
+    }
+
+
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,6 +99,17 @@ public class TentacleFrying : MonoBehaviour
             Debug.Log("stopped frying");
         }
     }
+
+
+    private IEnumerator BurntTentacle()
+    {
+        //LOSE CONDITION
+    }
+
+
+
+
+
 
 
 

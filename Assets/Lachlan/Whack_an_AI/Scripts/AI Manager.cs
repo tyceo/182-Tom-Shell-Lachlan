@@ -24,10 +24,12 @@ public class AIManager : MonoBehaviour
         {
             Debug.Log("FAILURE");
             SceneManager.LoadScene("Lose_Scene");
+            //LOSE CONDITION
         }
         if(evilAICount == 0)
         {
             Debug.Log("Game Won");
+            //WIN CONDITION
         }
     }
 }
