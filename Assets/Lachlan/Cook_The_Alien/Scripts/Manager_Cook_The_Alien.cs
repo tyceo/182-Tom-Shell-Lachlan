@@ -45,6 +45,7 @@ public class ManagerAlien : MonoBehaviour
     {
         Debug.Log("Lost the game");
         //LOSE CONDITION
+        SceneManager.LoadScene("Lose");
     }
 
 

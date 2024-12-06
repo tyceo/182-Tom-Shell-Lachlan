@@ -236,23 +236,76 @@ public class QuestionManager : MonoBehaviour
         functions[functionIndex].Invoke();
     }
 
-    private void ShowWinScreen() 
+    public void ShowWinScreen() 
     {
         // Set the win screen image to fully visible
-        winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 1);
+        //winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 1);
 
         // Delay to give time for win screen to be visible before scene change
-        //Invoke("LoadNextScene", 2f); // Change 2f to any delay time you want
+        //Invoke("ShowWinScreen", 2f); // Change 2f to any delay time you want
+        //SceneManager.LoadScene("Lose");
+        tmpTextChanger.UpdateText("");
+        tmpTextChanger.UpdateAnswer1Text("");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
+        tmpTextChanger.UpdateAnswer2Text("");
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
+        tmpTextChanger.UpdateAnswer3Text("");
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        StartCoroutine(reallosing());
     }
-
-    private void LoadNextScene()
-    {
-        // Load the specified next scene
-        SceneManager.LoadScene(nextSceneName);
-        realwinScreen.color = new Color(realwinScreen.color.r, realwinScreen.color.g, realwinScreen.color.b, 1);
-    }
-
     
+    private IEnumerator reallosing()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Lose");
+
+    }
+    
+
+
+    public void LoadNextScene()
+    {
+        tmpTextChanger.UpdateText("");
+        tmpTextChanger.UpdateAnswer1Text("");
+        tmpTextChanger.ChangeAnswer1TextColor(Color.white);
+        tmpTextChanger.UpdateAnswer2Text("");
+        tmpTextChanger.ChangeAnswer2TextColor(Color.white);
+        tmpTextChanger.UpdateAnswer3Text("");
+        tmpTextChanger.ChangeAnswer3TextColor(Color.white);
+        // Load the specified next scene
+        //SceneManager.LoadScene();
+        //realwinScreen.color = new Color(realwinScreen.color.r, realwinScreen.color.g, realwinScreen.color.b, 1);
+        if (GameObject.Find("StoryManager") != null)
+        {
+            //Debug.Log("The object exists!");
+            
+            
+            //SceneManager.LoadScene("Menu_Story_Progress");
+            StartCoroutine(realwinning());
+
+
+        }
+        else
+        {
+            
+            //SceneManager.LoadScene("Win");
+            StartCoroutine(realwinningnotstory());
+
+        }
+    }
+    private IEnumerator realwinning()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Menu_Story_Progress");
+    }
+
+    private IEnumerator realwinningnotstory()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Win");
+    }
+
+
     public void Question1()
     {
         correctAnswer = 1;

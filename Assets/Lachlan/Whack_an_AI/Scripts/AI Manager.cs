@@ -32,10 +32,11 @@ public class AIManager : MonoBehaviour
             }
             
         }
+        //
+        
 
-
-
-        if(playerHealth == 0)
+        //
+        if (playerHealth == 0)
         {
             Debug.Log("FAILURE");
             SceneManager.LoadScene("Lose_Scene");
@@ -44,8 +45,9 @@ public class AIManager : MonoBehaviour
                 incorrectAudio.Play();
                 gameWon = true;
             }
-            
+
             //LOSE CONDITION
+            SceneManager.LoadScene("Lose");
         }
         if(evilAICount == 0)
         {
@@ -57,6 +59,16 @@ public class AIManager : MonoBehaviour
             
             Debug.Log("Game Won");
             //WIN CONDITION
+            
+            if (GameObject.Find("StoryManager") != null)
+            {
+                SceneManager.LoadScene("Menu_Story_Progress");
+                //SceneManager.LoadScene("Menu_Story_Progress");
+            }
+            else
+            {
+                SceneManager.LoadScene("Win");
+            }
         }
     }
 }

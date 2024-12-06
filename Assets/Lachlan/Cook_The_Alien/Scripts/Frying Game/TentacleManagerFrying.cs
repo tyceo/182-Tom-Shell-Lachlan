@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TentacleManagerFrying : MonoBehaviour
 {
@@ -19,6 +20,15 @@ public class TentacleManagerFrying : MonoBehaviour
         if (friedTentacles == 6)
         {
             Debug.Log("Won the Game");
+            if (GameObject.Find("StoryManager") != null)
+            {
+                SceneManager.LoadScene("Menu_Story_Progress");
+                //SceneManager.LoadScene("Menu_Story_Progress");
+            }
+            else
+            {
+                SceneManager.LoadScene("Win");
+            }
         }
     }
 

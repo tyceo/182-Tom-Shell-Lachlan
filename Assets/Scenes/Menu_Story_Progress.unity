@@ -408,7 +408,7 @@ MonoBehaviour:
   OneHit: 0
   OneHit2: 0
   NumberOfLevelsDone: 0
-  NumberOfLevelsNeeded: 7
+  NumberOfLevelsNeeded: 8
   IsStorymode: 0
   Win: 0
   Lose: 0

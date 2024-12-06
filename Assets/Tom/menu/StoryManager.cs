@@ -18,6 +18,8 @@ public class StoryManager : MonoBehaviour
     public int IsStorymode = 0;
     public int Win = 0;
     public int Lose = 0;
+    public int cangodown;
+     
     
     public static StoryManager instance;
     public static StoryManager Instance
@@ -43,7 +45,10 @@ public class StoryManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+    public void FixCount()
+    {
 
+    }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SceneChangeCount++;
@@ -52,7 +57,7 @@ public class StoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cangodown = 1;
         NumberOfLevelsDone = 0;
         OneHit = 0;
         OneHit2 = 0;
@@ -92,6 +97,22 @@ public class StoryManager : MonoBehaviour
     void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "Lachlan_Cook_The_Alien_Scene_1" && cangodown == 1)
+        {
+            cangodown = 0;
+            SceneChangeCount = SceneChangeCount - 1;
+        }
+        if (currentScene.name != "Lachlan_Cook_The_Alien_Scene_1" && cangodown == 0)
+        {
+            cangodown = 1;
+        }
+
+            
+
+        
+
+
         if (currentScene.name == "Win")
         {
             Debug.Log("We are in the Win scene");
@@ -120,7 +141,7 @@ public class StoryManager : MonoBehaviour
         //kill when enter normal level select
         
 
-
+        /*
         if (randomIndex == randomIndex2)
         {
             
@@ -129,6 +150,7 @@ public class StoryManager : MonoBehaviour
             spriteRenderer2.sprite = spriteOptions[randomIndex2];
             
         }
+        */
         if (OneHit == 1)
         {
             OneHit = 0;
@@ -197,7 +219,7 @@ public class StoryManager : MonoBehaviour
     
     public void cookalien()
     {
-        SceneManager.LoadScene("Lachlan_Cook_The_Alien_1");
+        SceneManager.LoadScene("Lachlan_Cook_The_Alien_Scene_1");
     }
     public void aibad()
     {

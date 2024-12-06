@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerAlien : MonoBehaviour
 {
@@ -24,6 +25,6 @@ public class TimerAlien : MonoBehaviour
         // Set the slider's value to the calculated progress
         slider.value = progress * slider.maxValue;
 
-
+        
     }
 }

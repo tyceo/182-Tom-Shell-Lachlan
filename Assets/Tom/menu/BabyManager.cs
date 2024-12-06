@@ -45,7 +45,7 @@ public class BabyManager : MonoBehaviour
     void Update()
     {
         
-
+        /*
         if (randomIndex == randomIndex2)
         {
 
@@ -54,6 +54,7 @@ public class BabyManager : MonoBehaviour
             spriteRenderer2.sprite = spriteOptions[randomIndex2];
 
         }
+        */
         if (OneHit == 1)
         {
             OneHit = 0;
@@ -120,7 +121,7 @@ public class BabyManager : MonoBehaviour
     }
     public void cookalien()
     {
-        SceneManager.LoadScene("Lachlan_Cook_The_Alien_1");
+        SceneManager.LoadScene("Lachlan_Cook_The_Alien_Scene_1");
     }
     public void aibad()
     {

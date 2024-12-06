@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_Story_Progress.unity
     guid: e36a7bf25187b1b439d90967d953a28f
+  - enabled: 1
+    path: Assets/Scenes/Lachlan_Cook_The_Alien/Lachlan_Cook_The_Alien_Scene_1.unity
+    guid: a5efd44927028fe47b4440c26b907f51
+  - enabled: 1
+    path: Assets/Scenes/Lachlan_Cook_The_Alien/Lachlan_Cook_The_Alien_Scene_2.unity
+    guid: 34874c283e5f7d143aeb26fefbe89f5a
+  - enabled: 1
+    path: Assets/Scenes/Shell_Shoot_The_Right_Planet.unity
+    guid: b23843663346b0742ad481be559f79b0
+  - enabled: 1
+    path: Assets/Scenes/Lachlan_Whack_An_AI.unity
+    guid: 25c1a2d691f9b6946b83e7831cdd1a40
   m_configObjects: {}
