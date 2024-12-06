@@ -104,6 +104,7 @@ public class TentacleFrying : MonoBehaviour
     private IEnumerator BurntTentacle()
     {
         //LOSE CONDITION
+        yield return new WaitForSeconds(1);
     }
 
 
