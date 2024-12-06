@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Rock
+  - BlackHole
+  - Floor
+  - gravity1
+  - gravity2
+  - bad
+  - tetherfloor
+  - tether
+  - Option1
+  - Option2
   layers:
   - Default
   - TransparentFX
@@ -11,13 +22,13 @@ TagManager:
   - 
   - Water
   - UI
+  - Object
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
+  - background
+  - gravity
+  - Rope
+  - fancy
   - 
   - 
   - 
@@ -38,6 +49,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 93009041
+    locked: 0
+  - name: gravity
+    uniqueID: 1177276427
+    locked: 0
+  - name: wall
+    uniqueID: 1707170417
+    locked: 0
+  - name: detail
+    uniqueID: 1515093707
+    locked: 0
+  - name: player
+    uniqueID: 1182108561
+    locked: 0
+  - name: rocks
+    uniqueID: 3383621807
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 829320709
     locked: 0
