@@ -15,6 +15,7 @@ TagManager:
   - tether
   - Option1
   - Option2
+  - Fryer
   layers:
   - Default
   - TransparentFX
@@ -72,4 +73,16 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 829320709
+    locked: 0
+  - name: Background
+    uniqueID: 1609737501
+    locked: 0
+  - name: Tentacles
+    uniqueID: 794234819
+    locked: 0
+  - name: Fryer
+    uniqueID: 2991595243
+    locked: 0
+  - name: Knife
+    uniqueID: 1375831115
     locked: 0
