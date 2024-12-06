@@ -120,11 +120,11 @@ public class BabyManager : MonoBehaviour
     }
     public void cookalien()
     {
-        SceneManager.LoadScene("Lachlan_Cook_The_Alien");
+        SceneManager.LoadScene("Lachlan_Cook_The_Alien_1");
     }
     public void aibad()
     {
-        SceneManager.LoadScene("Lachlan_Wack_An_AI");
+        SceneManager.LoadScene("Lachlan_Whack_An_AI");
     }
 
     public void connectcable()
