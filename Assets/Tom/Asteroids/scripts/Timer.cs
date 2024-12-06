@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class TimerTrivia : MonoBehaviour
 {
     public Slider slider;
     public float duration = 15f; // Duration for progress to reach max, in seconds
