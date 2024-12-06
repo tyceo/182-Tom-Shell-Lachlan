@@ -13,7 +13,7 @@ public class AIInput : MonoBehaviour
     [SerializeField] private Sprite AnimationFrame4;
     [SerializeField] private Sprite AnimationFrame5;
     [SerializeField] private Sprite AnimationFrame6;
-
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private bool mouseHovering = false;
     public bool aiEvil;
@@ -25,7 +25,7 @@ public class AIInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
         int EvilChance = Random.Range(0, 2);
         if (EvilChance == 0)
         {
@@ -59,7 +59,7 @@ public class AIInput : MonoBehaviour
             manager.evilAICount--;
             dead = true;
             StartCoroutine(AnimationAI());
-            
+            audioSource.Play();
         }
 
         if(currentlyEvil == false)
