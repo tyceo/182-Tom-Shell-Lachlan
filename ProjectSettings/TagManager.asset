@@ -16,6 +16,7 @@ TagManager:
   - Option1
   - Option2
   - Fryer
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - gravity
   - Rope
   - fancy
-  - 
+  - Level
   - 
   - 
   - 
@@ -85,4 +86,13 @@ TagManager:
     locked: 0
   - name: Knife
     uniqueID: 1375831115
+    locked: 0
+  - name: words
+    uniqueID: 3245128813
+    locked: 0
+  - name: balls
+    uniqueID: 1449719657
+    locked: 0
+  - name: questions
+    uniqueID: 3344870327
     locked: 0
