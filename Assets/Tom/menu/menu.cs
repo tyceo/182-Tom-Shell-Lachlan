@@ -10,6 +10,7 @@ public class menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
         if (mainmenu != null) mainmenu.SetActive(true);
         if (levelselect != null) levelselect.SetActive(false);
     }
