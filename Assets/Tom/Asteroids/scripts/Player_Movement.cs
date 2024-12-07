@@ -19,10 +19,12 @@ public class Player_Movement : MonoBehaviour
     public Sprite hurtsome;
     public Sprite hurtlot;
     public int dead = 0;
+    public AudioSource thrusters;
+    public AudioSource owhit;
 
     //black hole
 
-    
+
 
     void start()
     {
@@ -90,6 +92,7 @@ public class Player_Movement : MonoBehaviour
             health = health - 1;
             //Application.Quit();
             print(health);
+            owhit.Play();
         }
         if (collision.gameObject.CompareTag("BlackHole"))
         {
@@ -107,9 +110,21 @@ public class Player_Movement : MonoBehaviour
         {
 
             velocity += (Vector2)(transform.up * acceleration * Time.deltaTime);
+            if (!thrusters.isPlaying)
+            {
+                thrusters.Play(); // Play sound if not already playing
+            }
+        }
+        else
+        {
+            if (thrusters.isPlaying)
+            {
+                thrusters.Stop(); // Stop sound when all keys are released
+            }
         }
 
-        // Move the ship based on its current velocity
+        
+            // Move the ship based on its current velocity
         transform.position += (Vector3)velocity * Time.deltaTime;
 
         // turning
