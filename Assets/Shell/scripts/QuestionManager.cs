@@ -45,8 +45,12 @@ public class QuestionManager : MonoBehaviour
     private int currentIndex = 0;         // Tracks the next function to call in shuffled order
     private List<int> order;
 
+
+    public GameObject triviaTutorial;
+
     void Start()
     {
+        StartCoroutine(FreezeAndDisappear());
         targetSpriteRenderer.sprite = sprite1;
         bulletthing.sprite = sprite1;
         gameWon = false;
@@ -67,7 +71,28 @@ public class QuestionManager : MonoBehaviour
         NextFunction(); // Example: Call the first function at start
     }
 
-    
+    IEnumerator FreezeAndDisappear()
+    {
+        // Freeze the game
+        Time.timeScale = 0;
+
+        // Wait for 3 real-time seconds while the game is frozen
+        float pauseEndTime = Time.realtimeSinceStartup + 7f;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Unfreeze the game
+        Time.timeScale = 1;
+
+        // Make the object disappear
+        if (triviaTutorial != null)
+        {
+            triviaTutorial.SetActive(false);
+        }
+    }
+
     void Update()
     {
         if (gameLost == true)

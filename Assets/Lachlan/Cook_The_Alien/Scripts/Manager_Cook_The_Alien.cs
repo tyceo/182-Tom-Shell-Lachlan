@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -12,11 +13,16 @@ public class ManagerAlien : MonoBehaviour
     private float elapsedTime = 0f; // Tracks the elapsed time
     private bool gameLose = false;
 
+    
+
     private void Start()
     {
+        
         progressBar.value = progressBar.maxValue; // Start progress at 0
         //winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
     }
+
+    
 
     private void Update()
     { 

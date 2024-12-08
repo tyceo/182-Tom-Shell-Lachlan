@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Manager : MonoBehaviour
 {
@@ -12,14 +14,37 @@ public class Manager : MonoBehaviour
     private float elapsedTime = 0f; // Tracks the elapsed time
     private bool gameWon = false;
     public bool gameOver = false;
-    
+
+    public GameObject shipTutorial;
 
     private void Start()
     {
+        StartCoroutine(FreezeAndDisappear());
         progressBar.value = 0; // Start progress at 0
         winScreen.color = new Color(winScreen.color.r, winScreen.color.g, winScreen.color.b, 0); // Make win screen invisible
     }
-    
+
+    IEnumerator FreezeAndDisappear()
+    {
+        // Freeze the game
+        Time.timeScale = 0;
+
+        // Wait for 3 real-time seconds while the game is frozen
+        float pauseEndTime = Time.realtimeSinceStartup + 4f;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Unfreeze the game
+        Time.timeScale = 1;
+
+        // Make the object disappear
+        if (shipTutorial != null)
+        {
+            shipTutorial.SetActive(false);
+        }
+    }
     public void Update()
     {
         
