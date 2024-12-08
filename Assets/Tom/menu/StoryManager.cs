@@ -31,6 +31,7 @@ public class StoryManager : MonoBehaviour
 
     void Awake()
     {
+        
         IsStorymode = 1;
         DontDestroyOnLoad(gameObject);
 
@@ -51,7 +52,18 @@ public class StoryManager : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        SceneChangeCount++;
+        /*
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name != "Lachlan_Cook_The_Alien_Scene_2") 
+        { 
+            SceneChangeCount++;
+        }
+        */
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Menu_Story_Progress")
+        {
+            SceneChangeCount++;
+        }
         Debug.Log($"Scene has changed {SceneChangeCount} times.");
     }
     // Start is called before the first frame update
@@ -98,15 +110,7 @@ public class StoryManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (currentScene.name == "Lachlan_Cook_The_Alien_Scene_1" && cangodown == 1)
-        {
-            cangodown = 0;
-            SceneChangeCount = SceneChangeCount - 1;
-        }
-        if (currentScene.name != "Lachlan_Cook_The_Alien_Scene_1" && cangodown == 0)
-        {
-            cangodown = 1;
-        }
+        
 
             
 
